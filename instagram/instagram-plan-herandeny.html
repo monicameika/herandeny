@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan de Contenido Instagram — Herandeny Sánchez</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --terracota: #C4622D;
+    --terracota-dark: #A0501F;
+    --terracota-light: #E8856A;
+    --cream: #FAF6F0;
+    --warm-white: #FDF9F4;
+    --brown-dark: #2D1F14;
+    --brown-mid: #5C3D2A;
+    --brown-light: #8B6150;
+    --gold: #C9A96E;
+    --gold-light: #E8D5B0;
+    --green: #4A7C5F;
+    --blue: #3D6478;
+    --purple: #6B4E7D;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--warm-white);
+    color: var(--brown-dark);
+  }
+
+  /* HEADER */
+  .doc-header {
+    background: var(--terracota);
+    padding: 4rem 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .doc-header::before {
+    content: 'INSTAGRAM';
+    position: absolute;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.05);
+    right: -2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+  }
+
+  .doc-header-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 1rem;
+  }
+
+  .doc-header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  .doc-header h1 em { font-style: italic; }
+
+  .doc-header p {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.95rem;
+    margin-top: 1rem;
+  }
+
+  .header-meta {
+    display: flex;
+    gap: 3rem;
+    margin-top: 2rem;
+  }
+
+  .meta-item { }
+  .meta-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: white;
+    font-weight: 300;
+  }
+  .meta-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+  }
+
+  /* MAIN CONTENT */
+  .content { padding: 4rem 5rem; }
+
+  /* STRATEGY SECTION */
+  .strategy {
+    background: var(--brown-dark);
+    border-radius: 2px;
+    padding: 3rem;
+    margin-bottom: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .strategy h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: white;
+    line-height: 1.2;
+  }
+
+  .strategy h2 em { font-style: italic; color: var(--gold); }
+
+  .strategy-pillars {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .pillar {
+    padding: 1.5rem;
+    border: 1px solid rgba(201,169,110,0.2);
+    border-radius: 2px;
+  }
+
+  .pillar-emoji { font-size: 1.5rem; margin-bottom: 0.8rem; }
+
+  .pillar-name {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+
+  .pillar-desc {
+    font-size: 0.85rem;
+    color: rgba(250,246,240,0.5);
+    line-height: 1.6;
+  }
+
+  /* CONTENT TYPES */
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--brown-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .section-title em { font-style: italic; color: var(--terracota); }
+
+  .section-sub {
+    font-size: 0.88rem;
+    color: var(--brown-light);
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.03em;
+  }
+
+  /* CONTENT TYPE CARDS */
+  .content-types {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .type-card {
+    border: 1px solid var(--gold-light);
+    padding: 2rem;
+    border-radius: 2px;
+    background: white;
+    position: relative;
+  }
+
+  .type-tag {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .tag-edu { background: rgba(74,124,95,0.1); color: var(--green); }
+  .tag-prox { background: rgba(196,98,45,0.1); color: var(--terracota); }
+  .tag-sell { background: rgba(107,78,125,0.1); color: var(--purple); }
+
+  .type-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--brown-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .type-desc {
+    font-size: 0.85rem;
+    color: var(--brown-mid);
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+  }
+
+  .type-freq {
+    font-size: 0.75rem;
+    color: var(--brown-light);
+    border-top: 1px solid var(--gold-light);
+    padding-top: 0.8rem;
+  }
+
+  .type-freq strong { color: var(--terracota); }
+
+  /* WEEKLY CALENDAR */
+  .calendar-section { margin-bottom: 3rem; }
+
+  .week-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--gold-light);
+    border: 1px solid var(--gold-light);
+    margin-bottom: 1.5rem;
+  }
+
+  .week-day {
+    background: white;
+    padding: 1.5rem;
+  }
+
+  .week-day-name {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--brown-light);
+    margin-bottom: 0.8rem;
+  }
+
+  .week-day-badge {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+  }
+
+  .week-day-topic {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    color: var(--brown-dark);
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+  }
+
+  .week-day-caption {
+    font-size: 0.78rem;
+    color: var(--brown-light);
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  /* CONTENT BANK */
+  .content-bank { margin-bottom: 3rem; }
+
+  .bank-category {
+    margin-bottom: 2.5rem;
+  }
+
+  .bank-category-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid var(--gold-light);
+  }
+
+  .bank-category-dot {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .bank-category-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--brown-dark);
+  }
+
+  .bank-category-count {
+    font-size: 0.75rem;
+    color: var(--brown-light);
+    margin-left: auto;
+    letter-spacing: 0.08em;
+  }
+
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  /* ── POST CARD BASE ── */
+  .post-card {
+    background: white;
+    border: 1px solid var(--gold-light);
+    border-radius: 2px;
+    padding: 0 1.5rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Franja de color superior por tipo */
+  .post-card::before {
+    content: '';
+    display: block;
+    height: 4px;
+    margin: 0 -1.5rem 1.2rem;
+    width: calc(100% + 3rem);
+  }
+
+  /* ── TIPO EDUCATIVO (verde) ── */
+  .post-card.edu {
+    border-color: rgba(74,124,95,0.25);
+    background: linear-gradient(160deg, rgba(74,124,95,0.03) 0%, white 40%);
+  }
+  .post-card.edu::before { background: var(--green); }
+  .post-card.edu .post-type-badge { background: rgba(74,124,95,0.1); color: var(--green); }
+  .post-card.edu .post-hook { color: var(--green); }
+  .post-card.edu .post-cta { color: var(--green); }
+  .post-card.edu .post-number { color: rgba(74,124,95,0.15); }
+  .post-card.edu .post-section { border-color: rgba(74,124,95,0.15); }
+
+  /* ── TIPO CONEXIÓN (terracota) ── */
+  .post-card.conn {
+    border-color: rgba(196,98,45,0.25);
+    background: linear-gradient(160deg, rgba(196,98,45,0.03) 0%, white 40%);
+  }
+  .post-card.conn::before { background: var(--terracota); }
+  .post-card.conn .post-type-badge { background: rgba(196,98,45,0.1); color: var(--terracota); }
+  .post-card.conn .post-hook { color: var(--terracota); }
+  .post-card.conn .post-cta { color: var(--terracota); }
+  .post-card.conn .post-number { color: rgba(196,98,45,0.15); }
+  .post-card.conn .post-section { border-color: rgba(196,98,45,0.15); }
+
+  /* ── TIPO VENTA (morado) ── */
+  .post-card.sell {
+    border-color: rgba(107,78,125,0.25);
+    background: linear-gradient(160deg, rgba(107,78,125,0.03) 0%, white 40%);
+  }
+  .post-card.sell::before { background: var(--purple); }
+  .post-card.sell .post-type-badge { background: rgba(107,78,125,0.1); color: var(--purple); }
+  .post-card.sell .post-hook { color: var(--purple); }
+  .post-card.sell .post-cta { color: var(--purple); }
+  .post-card.sell .post-number { color: rgba(107,78,125,0.15); }
+  .post-card.sell .post-section { border-color: rgba(107,78,125,0.15); }
+
+  /* Badge tipo de post */
+  .post-type-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 2px;
+    margin-bottom: 0.7rem;
+  }
+
+  .post-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    position: absolute;
+    top: 0.8rem;
+    right: 1rem;
+    line-height: 1;
+  }
+
+  .post-title {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--brown-dark);
+    margin-bottom: 0.6rem;
+    padding-right: 2.5rem;
+    line-height: 1.4;
+  }
+
+  /* Línea divisora entre secciones de la card */
+  .post-section {
+    border-top: 1px solid;
+    padding-top: 0.7rem;
+    margin-top: 0.7rem;
+  }
+
+  .post-section-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--brown-light);
+    margin-bottom: 0.3rem;
+  }
+
+  .post-hook {
+    font-size: 0.83rem;
+    font-style: italic;
+    margin-bottom: 0;
+    line-height: 1.5;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+  }
+
+  .post-body {
+    font-size: 0.82rem;
+    color: var(--brown-mid);
+    line-height: 1.7;
+    margin-bottom: 0;
+  }
+
+  .post-cta {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .post-cta::before { content: '→'; }
+
+  .post-hashtags {
+    font-size: 0.7rem;
+    color: var(--brown-light);
+    margin-top: 0;
+    line-height: 1.7;
+  }
+
+  /* Leyenda visual arriba del banco */
+  .post-legend {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 1rem 1.5rem;
+    background: white;
+    border: 1px solid var(--gold-light);
+    border-radius: 2px;
+    flex-wrap: wrap;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.78rem;
+    color: var(--brown-mid);
+  }
+
+  .legend-stripe {
+    width: 24px;
+    height: 4px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  /* VISUAL GUIDE */
+  .visual-guide {
+    background: var(--cream);
+    padding: 3rem;
+    border-radius: 2px;
+    margin-bottom: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .visual-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--brown-dark);
+    margin-bottom: 1.5rem;
+    grid-column: 1 / -1;
+  }
+
+  .visual-title em { font-style: italic; color: var(--terracota); }
+
+  .color-palette {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .color-swatch {
+    width: 3rem; height: 3rem;
+    border-radius: 2px;
+    display: flex;
+    align-items: flex-end;
+    padding: 0.2rem;
+  }
+
+  .color-label {
+    font-size: 0.55rem;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.05em;
+  }
+
+  .guide-list {
+    list-style: none;
+  }
+
+  .guide-list li {
+    display: flex;
+    gap: 0.8rem;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    color: var(--brown-mid);
+    line-height: 1.6;
+  }
+
+  .guide-list li::before {
+    content: '→';
+    color: var(--terracota);
+    flex-shrink: 0;
+    font-size: 0.8rem;
+    margin-top: 0.1rem;
+  }
+
+  /* BIO */
+  .bio-box {
+    background: var(--brown-dark);
+    padding: 2.5rem;
+    border-radius: 2px;
+    margin-bottom: 3rem;
+  }
+
+  .bio-box h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+  }
+
+  .bio-versions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .bio-version {
+    background: rgba(255,255,255,0.05);
+    padding: 1.5rem;
+    border-left: 2px solid var(--terracota);
+  }
+
+  .bio-version-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+  }
+
+  .bio-version-text {
+    font-size: 0.88rem;
+    color: rgba(250,246,240,0.8);
+    line-height: 1.8;
+  }
+
+  /* HASHTAGS */
+  .hashtags-section {
+    margin-bottom: 3rem;
+  }
+
+  .hashtag-groups {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .hashtag-group {
+    background: white;
+    border: 1px solid var(--gold-light);
+    padding: 1.5rem;
+    border-radius: 2px;
+  }
+
+  .hashtag-group-title {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--terracota);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--gold-light);
+  }
+
+  .hashtag-list {
+    font-size: 0.82rem;
+    color: var(--brown-mid);
+    line-height: 2;
+  }
+
+  @media print {
+    body { background: white; }
+    .content { padding: 2rem; }
+    .doc-header { padding: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="doc-header">
+  <p class="doc-header-label">Estrategia de contenido · @Herass_Tarot</p>
+  <h1>Plan de Instagram<br><em>Herandeny Sánchez</em></h1>
+  <p>Posts estáticos · 3–4 publicaciones semanales · Tono cercano + profesional</p>
+  <div class="header-meta">
+    <div class="meta-item">
+      <div class="meta-value">3–4</div>
+      <div class="meta-label">Posts por semana</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-value">3</div>
+      <div class="meta-label">Pilares de contenido</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-value">30</div>
+      <div class="meta-label">Ideas de posts</div>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- STRATEGY -->
+  <div class="strategy">
+    <div>
+      <h2>La <em>estrategia</em><br>en 3 pilares</h2>
+      <p style="color: rgba(250,246,240,0.5); font-size: 0.85rem; margin-top: 1rem; line-height: 1.7;">El objetivo no es vender desde el primer día. Es que la gente la conozca, confíe en ella y luego compre.</p>
+    </div>
+    <div class="strategy-pillars">
+      <div class="pillar">
+        <div class="pillar-emoji">📚</div>
+        <div class="pillar-name">Educar</div>
+        <div class="pillar-desc">Curiosidades, explicaciones y desmitificaciones sobre tarot, astrología, numerología. Posiciona a Herandeny como experta.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-emoji">🤝</div>
+        <div class="pillar-name">Conectar</div>
+        <div class="pillar-desc">Posts personales, reflexiones, preguntas al audience. Genera cercanía y confianza emocional.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-emoji">✨</div>
+        <div class="pillar-name">Inspirar</div>
+        <div class="pillar-desc">Frases, rituales sencillos, afirmaciones. Contenido que la gente guarda y comparte.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-emoji">💼</div>
+        <div class="pillar-name">Vender</div>
+        <div class="pillar-desc">Solo 1 de cada 4 posts. Servicios, testimonios, oferta. Sin presión, con propósito.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTENT TYPES -->
+  <h2 class="section-title">Tipos de <em>contenido</em></h2>
+  <p class="section-sub">Tres formatos que funcionan para posts estáticos — fáciles de hacer en Canva</p>
+
+  <div class="content-types">
+    <div class="type-card">
+      <span class="type-tag tag-edu">Educativo</span>
+      <h3 class="type-title">Post Didáctico</h3>
+      <p class="type-desc">Explica un concepto de forma sencilla. "¿Qué es el Arcano X?", "Los 4 palos del tarot", "Tu número de vida y qué significa". La gente guarda estos posts.</p>
+      <p class="type-freq"><strong>2x por semana</strong> · Lunes y miércoles</p>
+    </div>
+    <div class="type-card">
+      <span class="type-tag tag-prox">Conexión</span>
+      <h3 class="type-title">Post de Reflexión</h3>
+      <p class="type-desc">Una frase poderosa con contexto personal. Comparte su perspectiva sobre sanar, bloqueos, decisiones. Genera conversación en comentarios.</p>
+      <p class="type-freq"><strong>1x por semana</strong> · Viernes</p>
+    </div>
+    <div class="type-card">
+      <span class="type-tag tag-sell">Servicio</span>
+      <h3 class="type-title">Post de Oferta</h3>
+      <p class="type-desc">Presenta un servicio contando qué problema resuelve, no solo qué es. "¿Sientes que siempre repites los mismos patrones? La astrología terapéutica puede ayudarte."</p>
+      <p class="type-freq"><strong>1x por semana</strong> · Domingo o martes</p>
+    </div>
+  </div>
+
+  <!-- WEEKLY CALENDAR -->
+  <div class="calendar-section">
+    <h2 class="section-title">Calendario <em>semanal tipo</em></h2>
+    <p class="section-sub">Estructura repetible — cada semana sigue este esquema con temas distintos</p>
+
+    <div class="week-grid">
+      <div class="week-day">
+        <div class="week-day-name">Lunes</div>
+        <span class="week-day-badge tag-edu" style="background:rgba(74,124,95,0.1);color:#4A7C5F;">Educativo</span>
+        <div class="week-day-topic">Curiosidad o concepto del mundo espiritual</div>
+        <div class="week-day-caption">Ej: "¿Sabías que cada palo del tarot representa un elemento? 🌍🔥💧🌬️ Te lo explico..."</div>
+      </div>
+      <div class="week-day">
+        <div class="week-day-name">Miércoles</div>
+        <span class="week-day-badge tag-edu" style="background:rgba(74,124,95,0.1);color:#4A7C5F;">Educativo</span>
+        <div class="week-day-topic">Desmitificación o "cómo funciona realmente"</div>
+        <div class="week-day-caption">Ej: "El tarot no predice el futuro. Te muestra opciones. Aquí la diferencia..."</div>
+      </div>
+      <div class="week-day">
+        <div class="week-day-name">Viernes</div>
+        <span class="week-day-badge tag-prox" style="background:rgba(196,98,45,0.1);color:#C4622D;">Conexión</span>
+        <div class="week-day-topic">Reflexión personal o pregunta al público</div>
+        <div class="week-day-caption">Ej: "¿Cuándo fue la última vez que tomaste una decisión desde el miedo y no desde el amor?"</div>
+      </div>
+      <div class="week-day">
+        <div class="week-day-name">Domingo o Martes</div>
+        <span class="week-day-badge tag-sell" style="background:rgba(107,78,125,0.1);color:#6B4E7D;">Servicio</span>
+        <div class="week-day-topic">Presenta un servicio desde el problema que resuelve</div>
+        <div class="week-day-caption">Ej: "Si sientes que no avanzas en el amor, el trabajo o contigo misma... agenda una sesión."</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTENT BANK -->
+  <div class="content-bank">
+    <h2 class="section-title">Banco de <em>30 ideas</em> de posts</h2>
+    <p class="section-sub">Con hook, cuerpo y llamada a la acción — listas para adaptar en Canva</p>
+
+    <!-- LEYENDA VISUAL -->
+    <div class="post-legend">
+      <div class="legend-item">
+        <div class="legend-stripe" style="background:#4A7C5F;"></div>
+        <span>📚 Educativo — Tarot</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-stripe" style="background:#3D6478;"></div>
+        <span>🔭 Educativo — Astrología & Numerología</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-stripe" style="background:#C4622D;"></div>
+        <span>🤝 Reflexión & Conexión</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-stripe" style="background:#6B4E7D;"></div>
+        <span>✨ Servicio (venta suave)</span>
+      </div>
+    </div>
+
+    <!-- EDUCATIVOS TAROT -->
+    <div class="bank-category">
+      <div class="bank-category-header">
+        <div class="bank-category-dot" style="background:#4A7C5F;"></div>
+        <span class="bank-category-title">Posts Educativos — Tarot</span>
+        <span class="bank-category-count">6 ideas</span>
+      </div>
+      <div class="posts-grid">
+
+        <div class="post-card edu">
+          <span class="post-number">01</span>
+          <span class="post-type-badge">📚 Educativo</span>
+          <div class="post-title">¿Qué es el Tarot Terapéutico?</div>
+          <div class="post-section">
+            <div class="post-section-label">Hook</div>
+            <div class="post-hook">"El tarot no es magia negra ni adivinación. Es un espejo."</div>
+          </div>
+          <div class="post-section">
+            <div class="post-section-label">Cuerpo</div>
+            <div class="post-body">El Tarot Terapéutico usa las cartas como herramienta de introspección. Cada imagen activa tu intuición y te ayuda a ver lo que ya sabes pero no te permites ver. No te digo qué va a pasar — te ayudo a entender qué está pasando dentro de ti.</div>
+          </div>
+          <div class="post-section">
+            <div class="post-section-label">CTA</div>
+            <div class="post-cta">¿Te gustaría probar una sesión? Link en bio.</div>
+          </div>
+          <div class="post-section">
+            <div class="post-hashtags">#tarotterapeutico #tarot #autoconocimiento #terapiasalternativas #herandeny</div>
+          </div>
+        </div>
+
+        <div class="post-card edu">
+          <span class="post-number">02</span>
+          <span class="post-type-badge">📚 Educativo</span>
+          <div class="post-title">Los 4 palos del Tarot explicados</div>
+          <div class="post-section">
+            <div class="post-section-label">Hook</div>
+            <div class="post-hook">"¿Qué palo aparece más en tus tiradas? Esto lo dice de ti."</div>
+          </div>
+          <div class="post-section">
+            <div class="post-section-label">Cuerpo</div>
+            <div class="post-body">♦️ Oros = dinero, trabajo, materia. ♠️ Espadas = mente, conflictos, decisiones. ♥️ Copas = emociones, relaciones, intuición. 🌿 Bastos = energía, creatividad, acción. Cuando un palo domina tu tirada, hay un área de vida que pide atención.</div>
+          </div>
+          <div class="post-section">
+            <div class="post-section-label">CTA</div>
+            <div class="post-cta">Guarda este post para tu próxima tirada.</div>
+          </div>
+          <div class="post-section">
+            <div class="post-hashtags">#tarot #aprendetarot #palosdeltalot #lecturadetarot</div>
+          </div>
+        </div>
+
+        <div class="post-card edu">
+          <span class="post-number">03</span>
+          <span class="post-type-badge">📚 Educativo</span>
+          <div class="post-title">El Arcano de la Muerte no significa lo que crees</div>
+          <div class="post-section">
+            <div class="post-section-label">Hook</div>
+            <div class="post-hook">"La carta más temida del tarot en realidad anuncia... renacimiento."</div>
+          </div>
+          <div class="post-section">
+            <div class="post-section-label">Cuerpo</div>
+            <div class="post-body">La carta XIII — La Muerte — es la más malinterpretada. No habla de muerte física. Habla de transformación, de dejar ir lo que ya no te sirve, de cerrar ciclos para que algo nuevo pueda nacer.</div>
+          </div>
+          <div class="post-section">
+            <div class="post-section-label">CTA</div>
+            <div class="post-cta">¿Te ha salido esta carta? Cuéntame en comentarios.</div>
+          </div>
+          <div class="post-section">
+            <div class="post-hashtags">#tarot #arcanomayor #mitosdetalot #transformacion</div>
+          </div>
+        </div>
+
+        <div class="post-card edu">
+          <span class="post-number">04</span>
+          <span class="post-type-badge">📚 Educativo</span>
+          <div class="post-title">Arcanos Mayores vs Menores</div>
+          <div class="post-section">
+            <div class="post-section-label">Hook</div>
+            <div class="post-hook">"¿Sabes la diferencia? Cambia completamente cómo lees una tirada."</div>
+          </div>
+          <div class="post-section">
+            <div class="post-section-label">Cuerpo</div>
+            <div class="post-body">Los 22 Arcanos Mayores hablan de lecciones de vida profundas. Los 56 Arcanos Menores hablan del día a día. Si en tu tirada dominan los Mayores, algo importante está pasando en tu vida.</div>
+          </div>
+          <div class="post-section">
+            <div class="post-section-label">CTA</div>
+            <div class="post-cta">Guarda este post — es básico para entender el tarot.</div>
+          </div>
+          <div class="post-section">
+            <div class="post-hashtags">#tarot #arcanosmayores #aprendetarot #tarotterapeutico</div>
+          </div>
+        </div>
+
+        <div class="post-card edu">
+          <span class="post-number">05</span>
+          <span class="post-type-badge">📚 Educativo</span>
+          <div class="post-title">3 preguntas que NO debes hacer al tarot</div>
+          <div class="post-section">
+            <div class="post-section-label">Hook</div>
+            <div class="post-hook">"¿Me quiere? ¿Cuándo me llama? El tarot no funciona así — y aquí el porqué."</div>
+          </div>
+          <div class="post-section">
+            <div class="post-section-label">Cuerpo</div>
+            <div class="post-body">Las preguntas cerradas limitan la lectura. En lugar de "¿me quiere?" pregunta "¿qué necesito entender de esta relación?" Cambia la pregunta y cambia tu vida.</div>
+          </div>
+          <div class="post-section">
+            <div class="post-section-label">CTA</div>
+            <div class="post-cta">¿Cuál es tu pregunta favorita para el tarot? Déjala abajo 👇</div>
+          </div>
+          <div class="post-section">
+            <div class="post-hashtags">#tarot #consultadetalot #preguntasaltarot #tarotterapeutico</div>
+          </div>
+        </div>
+
+        <div class="post-card edu">
+          <span class="post-number">06</span>
+          <span class="post-type-badge">📚 Educativo</span>
+          <div class="post-title">La carta del día: cómo usarla</div>
+          <div class="post-section">
+            <div class="post-section-label">Hook</div>
+            <div class="post-hook">"Cada mañana saco una carta. Esto es lo que hace por mi día."</div>
+          </div>
+          <div class="post-section">
+            <div class="post-section-label">Cuerpo</div>
+            <div class="post-body">Sacar una carta al despertar no es superstición — es una práctica de intención. Le preguntas al mazo: "¿Qué energía me acompaña hoy?" Es meditación en formato visual.</div>
+          </div>
+          <div class="post-section">
+            <div class="post-section-label">CTA</div>
+            <div class="post-cta">¿Tú también haces carta del día? Cuéntame.</div>
+          </div>
+          <div class="post-section">
+            <div class="post-hashtags">#tarotdiario #cartadeldía #ritualesmatutinos #tarot</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- EDUCATIVOS ASTROLOGÍA -->
+    <div class="bank-category">
+      <div class="bank-category-header">
+        <div class="bank-category-dot" style="background:#3D6478;"></div>
+        <span class="bank-category-title">Posts Educativos — Astrología & Numerología</span>
+        <span class="bank-category-count">6 ideas</span>
+      </div>
+      <div class="posts-grid">
+
+        <div class="post-card edu" style="--green:#3D6478;">
+          <span class="post-number">07</span>
+          <span class="post-type-badge" style="background:rgba(61,100,120,0.1);color:#3D6478;">🔭 Astrología</span>
+          <div class="post-title">Tu signo solar NO es todo tu horóscopo</div>
+          <div class="post-section" style="border-color:rgba(61,100,120,0.15);">
+            <div class="post-section-label">Hook</div>
+            <div class="post-hook" style="color:#3D6478;">"¿Lees tu horóscopo y nunca te identifica? Esto es lo que falta."</div>
+          </div>
+          <div class="post-section" style="border-color:rgba(61,100,120,0.15);">
+            <div class="post-section-label">Cuerpo</div>
+            <div class="post-body">También tienes signo lunar (emociones), ascendente (cómo te ven) y mucho más. La astrología terapéutica trabaja con tu carta natal completa — el mapa real de tu alma.</div>
+          </div>
+          <div class="post-section" style="border-color:rgba(61,100,120,0.15);">
+            <div class="post-section-label">CTA</div>
+            <div class="post-cta" style="color:#3D6478;">¿Conoces tu signo lunar? Dímelo en comentarios 🌙</div>
+          </div>
+          <div class="post-section" style="border-color:rgba(61,100,120,0.15);">
+            <div class="post-hashtags">#astrologia #cartanatal #astrologiaterapeutica #signozodiacal</div>
+          </div>
+        </div>
+
+        <div class="post-card edu" style="--green:#3D6478;">
+          <span class="post-number">08</span>
+          <span class="post-type-badge" style="background:rgba(61,100,120,0.1);color:#3D6478;">🔢 Numerología</span>
+          <div class="post-title">¿Qué es tu número de vida?</div>
+          <div class="post-section" style="border-color:rgba(61,100,120,0.15);">
+            <div class="post-section-label">Hook</div>
+            <div class="post-hook" style="color:#3D6478;">"Un solo número que resume tu misión en esta vida. ¿Sabes cuál es el tuyo?"</div>
+          </div>
+          <div class="post-section" style="border-color:rgba(61,100,120,0.15);">
+            <div class="post-section-label">Cuerpo</div>
+            <div class="post-body">Se calcula sumando todos los dígitos de tu fecha de nacimiento. Ejemplo: 15/03/1990 → 1+5+0+3+1+9+9+0 = 28 → 2+8 = 10 → 1. Número 1 = liderazgo, independencia, pionera.</div>
+          </div>
+          <div class="post-section" style="border-color:rgba(61,100,120,0.15);">
+            <div class="post-section-label">CTA</div>
+            <div class="post-cta" style="color:#3D6478;">Calcula el tuyo y dime — te digo qué significa.</div>
+          </div>
+          <div class="post-section" style="border-color:rgba(61,100,120,0.15);">
+            <div class="post-hashtags">#numerologia #numerodevia #autoconocimiento #numerologiaarquetipica</div>
+          </div>
+        </div>
+
+        <div class="post-card edu" style="--green:#3D6478;">
+          <span class="post-number">09</span>
+          <span class="post-type-badge" style="background:rgba(61,100,120,0.1);color:#3D6478;">🔭 Astrología</span>
+          <div class="post-title">Los nodos lunares: tu karma y tu propósito</div>
+          <div class="post-section" style="border-color:rgba(61,100,120,0.15);">
+            <div class="post-section-label">Hook</div>
+            <div class="post-hook" style="color:#3D6478;">"El nodo norte te dice a dónde vas. El nodo sur, de dónde vienes."</div>
+          </div>
+          <div class="post-section" style="border-color:rgba(61,100,120,0.15);">
+            <div class="post-section-label">Cuerpo</div>
+            <div class="post-body">El Nodo Norte representa tu propósito de vida. El Nodo Sur, los talentos y patrones de vidas anteriores. Trabajar con ellos explica por qué ciertos temas se repiten en tu vida.</div>
+          </div>
+          <div class="post-section" style="border-color:rgba(61,100,120,0.15);">
+            <div class="post-section-label">CTA</div>
+            <div class="post-cta" style="color:#3D6478;">¿Conoces tus nodos? Descúbrelos en una sesión.</div>
+          </div>
+          <div class="post-section" style="border-color:rgba(61,100,120,0.15);">
+            <div class="post-hashtags">#nodoslunares #astrologia #vidasanteriores #proposito</div>
+          </div>
+        </div>
+
+        <div class="post-card edu" style="--green:#3D6478;">
+          <span class="post-number">10</span>
+          <span class="post-type-badge" style="background:rgba(61,100,120,0.1);color:#3D6478;">⚡ Energía</span>
+          <div class="post-title">Los 7 chakras explicados en 7 líneas</div>
+          <div class="post-section" style="border-color:rgba(61,100,120,0.15);">
+            <div class="post-section-label">Hook</div>
+            <div class="post-hook" style="color:#3D6478;">"¿Cuál de tus chakras crees que está más bloqueado hoy?"</div>
+          </div>
+          <div class="post-section" style="border-color:rgba(61,100,120,0.15);">
+            <div class="post-section-label">Cuerpo</div>
+            <div class="post-body">🔴 Raíz = seguridad. 🟠 Sacral = creatividad. 🟡 Plexo = poder. 💚 Corazón = amor. 💙 Garganta = expresión. 👁️ Tercer ojo = intuición. 🔮 Corona = conexión espiritual.</div>
+          </div>
+          <div class="post-section" style="border-color:rgba(61,100,120,0.15);">
+            <div class="post-section-label">CTA</div>
+            <div class="post-cta" style="color:#3D6478;">Guarda este post y úsalo como referencia.</div>
+          </div>
+          <div class="post-section" style="border-color:rgba(61,100,120,0.15);">
+            <div class="post-hashtags">#chakras #energia #radiestecia #sanacionenergetica #bienestar</div>
+          </div>
+        </div>
+
+        <div class="post-card edu" style="--green:#3D6478;">
+          <span class="post-number">11</span>
+          <span class="post-type-badge" style="background:rgba(61,100,120,0.1);color:#3D6478;">🌿 Heridas</span>
+          <div class="post-title">¿Qué son las heridas del alma?</div>
+          <div class="post-section" style="border-color:rgba(61,100,120,0.15);">
+            <div class="post-section-label">Hook</div>
+            <div class="post-hook" style="color:#3D6478;">"¿Por qué repites siempre los mismos patrones? Esto lo explica todo."</div>
+          </div>
+          <div class="post-section" style="border-color:rgba(61,100,120,0.15);">
+            <div class="post-section-label">Cuerpo</div>
+            <div class="post-body">Las 5 heridas del alma (abandono, rechazo, humillación, traición, injusticia) se forman en la infancia y condicionan todas nuestras relaciones de adultos. Reconocerlas es el primer paso para sanarlas.</div>
+          </div>
+          <div class="post-section" style="border-color:rgba(61,100,120,0.15);">
+            <div class="post-section-label">CTA</div>
+            <div class="post-cta" style="color:#3D6478;">¿Reconoces alguna en ti? Cuéntame en privado.</div>
+          </div>
+          <div class="post-section" style="border-color:rgba(61,100,120,0.15);">
+            <div class="post-hashtags">#heridasdelalma #sanacionemocional #infancia #psicologiaterapeutica</div>
+          </div>
+        </div>
+
+        <div class="post-card edu" style="--green:#3D6478;">
+          <span class="post-number">12</span>
+          <span class="post-type-badge" style="background:rgba(61,100,120,0.1);color:#3D6478;">👼 Arcángeles</span>
+          <div class="post-title">¿Qué son los Arcángeles y cómo conectar?</div>
+          <div class="post-section" style="border-color:rgba(61,100,120,0.15);">
+            <div class="post-section-label">Hook</div>
+            <div class="post-hook" style="color:#3D6478;">"No hace falta ser religiosa para trabajar con los arcángeles."</div>
+          </div>
+          <div class="post-section" style="border-color:rgba(61,100,120,0.15);">
+            <div class="post-section-label">Cuerpo</div>
+            <div class="post-body">Miguel (protección), Gabriel (comunicación), Rafael (sanación), Uriel (sabiduría). El oráculo es una herramienta para recibir mensajes de guía en momentos de incertidumbre.</div>
+          </div>
+          <div class="post-section" style="border-color:rgba(61,100,120,0.15);">
+            <div class="post-section-label">CTA</div>
+            <div class="post-cta" style="color:#3D6478;">¿Con cuál arcángel sientes más conexión? 👇</div>
+          </div>
+          <div class="post-section" style="border-color:rgba(61,100,120,0.15);">
+            <div class="post-hashtags">#arcangeles #oraculo #espiritualidad #mensajesdeluniverso</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- REFLEXION Y CONEXION -->
+    <div class="bank-category">
+      <div class="bank-category-header">
+        <div class="bank-category-dot" style="background:#C4622D;"></div>
+        <span class="bank-category-title">Posts de Reflexión y Conexión</span>
+        <span class="bank-category-count">10 ideas</span>
+      </div>
+      <div class="posts-grid">
+
+        <div class="post-card conn">
+          <span class="post-number">13</span>
+          <span class="post-type-badge">🤝 Conexión</span>
+          <div class="post-title">La decisión que cambió mi vida</div>
+          <div class="post-section">
+            <div class="post-section-label">Hook</div>
+            <div class="post-hook">"Hace 8 años tomé una decisión que no entendí hasta mucho después."</div>
+          </div>
+          <div class="post-section">
+            <div class="post-section-label">Cuerpo</div>
+            <div class="post-body">Cuéntales por qué empezaste en este camino. Tu historia personal es tu mejor marketing. La gente no compra servicios — compra transformación.</div>
+          </div>
+          <div class="post-section">
+            <div class="post-section-label">CTA</div>
+            <div class="post-cta">¿Cuándo fue tu primer contacto con las terapias alternativas?</div>
+          </div>
+          <div class="post-section">
+            <div class="post-hashtags">#mihistoria #terapeutaholistica #autoconocimiento #herandeny</div>
+          </div>
+        </div>
+
+        <div class="post-card conn">
+          <span class="post-number">14</span>
+          <span class="post-type-badge">🤝 Conexión</span>
+          <div class="post-title">Pregunta poderosa del viernes</div>
+          <div class="post-section">
+            <div class="post-section-label">Hook</div>
+            <div class="post-hook">"¿Estás tomando decisiones desde el miedo o desde el amor?"</div>
+          </div>
+          <div class="post-section">
+            <div class="post-section-label">Cuerpo</div>
+            <div class="post-body">Una pregunta que genera reflexión profunda. Este tipo de post obtiene mucho engagement porque invita a la participación. Serie: cada viernes una pregunta distinta.</div>
+          </div>
+          <div class="post-section">
+            <div class="post-section-label">CTA</div>
+            <div class="post-cta">Respóndela en comentarios — sin filtros.</div>
+          </div>
+          <div class="post-section">
+            <div class="post-hashtags">#reflexion #preguntadelviernes #crecimientopersonal #conciencia</div>
+          </div>
+        </div>
+
+        <div class="post-card conn">
+          <span class="post-number">15</span>
+          <span class="post-type-badge">🤝 Conexión</span>
+          <div class="post-title">Lo que nadie te dice sobre sanar</div>
+          <div class="post-section">
+            <div class="post-section-label">Hook</div>
+            <div class="post-hook">"Sanar no es siempre sentirse bien. A veces es sentir todo lo que evitabas."</div>
+          </div>
+          <div class="post-section">
+            <div class="post-section-label">Cuerpo</div>
+            <div class="post-body">El proceso no es lineal, no es bonito siempre, no es instantáneo. Esta honestidad diferencia a Herandeny de quienes solo venden "luz y magia".</div>
+          </div>
+          <div class="post-section">
+            <div class="post-section-label">CTA</div>
+            <div class="post-cta">¿En qué parte del proceso de sanación estás ahora?</div>
+          </div>
+          <div class="post-section">
+            <div class="post-hashtags">#sanacion #crecimientopersonal #honestidad #terapia</div>
+          </div>
+        </div>
+
+        <div class="post-card conn">
+          <span class="post-number">16</span>
+          <span class="post-type-badge">🤝 Conexión</span>
+          <div class="post-title">Frase que me cambió la perspectiva</div>
+          <div class="post-section">
+            <div class="post-section-label">Hook</div>
+            <div class="post-hook">"El problema no es el problema. Tu relación con el problema es el problema."</div>
+          </div>
+          <div class="post-section">
+            <div class="post-section-label">Cuerpo</div>
+            <div class="post-body">Posts de frases poderosas se guardan y comparten. Elige frases de su área de trabajo y añade su perspectiva personal en el caption.</div>
+          </div>
+          <div class="post-section"><div class="post-section-label">CTA</div><div class="post-cta">Guarda esta frase si te resonó 💫</div></div>
+          <div class="post-section"><div class="post-hashtags">#frasesinspiracion #reflexion #mentalidad #espiritualidad</div></div>
+        </div>
+
+        <div class="post-card conn">
+          <span class="post-number">17</span>
+          <span class="post-type-badge">🤝 Conexión</span>
+          <div class="post-title">¿Qué diferencia una terapia convencional de una alternativa?</div>
+          <div class="post-section"><div class="post-section-label">Hook</div><div class="post-hook">"No es una cosa u otra. Las dos se complementan."</div></div>
+          <div class="post-section"><div class="post-section-label">Cuerpo</div><div class="post-body">Posiciona las terapias alternativas como complemento, no sustituto. Genera confianza en personas escépticas y muestra su formación académica (Derecho, Género).</div></div>
+          <div class="post-section"><div class="post-section-label">CTA</div><div class="post-cta">¿Has combinado terapia convencional con alternativa?</div></div>
+          <div class="post-section"><div class="post-hashtags">#terapiasalternativas #saludmental #bienestarintegral #holistica</div></div>
+        </div>
+
+        <div class="post-card conn">
+          <span class="post-number">18</span>
+          <span class="post-type-badge">🤝 Conexión</span>
+          <div class="post-title">3 señales de que tu alma pide atención</div>
+          <div class="post-section"><div class="post-section-label">Hook</div><div class="post-hook">"Si te identificas con 2 de estas 3, tu alma está pidiendo atención."</div></div>
+          <div class="post-section"><div class="post-section-label">Cuerpo</div><div class="post-body">1. Sientes que algo no encaja. 2. Repites los mismos patrones. 3. Tomas decisiones desde el miedo, no desde la certeza.</div></div>
+          <div class="post-section"><div class="post-section-label">CTA</div><div class="post-cta">¿Te identificas? Agenda una primera sesión — link en bio.</div></div>
+          <div class="post-section"><div class="post-hashtags">#senalesdeluniverso #autoconocimiento #terapiaalternativa #herandeny</div></div>
+        </div>
+
+        <div class="post-card conn">
+          <span class="post-number">19</span>
+          <span class="post-type-badge">🤝 Conexión</span>
+          <div class="post-title">Mi ritual matutino</div>
+          <div class="post-section"><div class="post-section-label">Hook</div><div class="post-hook">"Cada mañana hago esto antes de revisar el teléfono."</div></div>
+          <div class="post-section"><div class="post-section-label">Cuerpo</div><div class="post-body">Comparte su rutina: carta del día, meditación, lectura de carta astral. Los rituales del experto humanizan y generan aspiración. Los seguidores copiarán el ritual y te asociarán con él.</div></div>
+          <div class="post-section"><div class="post-section-label">CTA</div><div class="post-cta">¿Cuál es tu ritual matutino? 🌅</div></div>
+          <div class="post-section"><div class="post-hashtags">#ritualesmatutinos #rutinameditacion #espiritualidad #bienestar</div></div>
+        </div>
+
+        <div class="post-card conn">
+          <span class="post-number">20</span>
+          <span class="post-type-badge">🤝 Conexión</span>
+          <div class="post-title">Esto me dijeron cuando empecé y estaban equivocados</div>
+          <div class="post-section"><div class="post-section-label">Hook</div><div class="post-hook">"'El tarot es para gente ignorante.' Mi profesora de universidad, 2015."</div></div>
+          <div class="post-section"><div class="post-section-label">Cuerpo</div><div class="post-body">Usa su formación académica como contraste — abogada, maestra, docente, que también es tarotista. Rompe el estereotipo y atrae un público más amplio.</div></div>
+          <div class="post-section"><div class="post-section-label">CTA</div><div class="post-cta">¿Qué prejuicio tenías tú antes de acercarte a esto?</div></div>
+          <div class="post-section"><div class="post-hashtags">#prejuicios #tarot #espiritualidad #mitos</div></div>
+        </div>
+
+        <div class="post-card conn">
+          <span class="post-number">21</span>
+          <span class="post-type-badge">🤝 Conexión</span>
+          <div class="post-title">Una cosa que aprendí de mis clientes</div>
+          <div class="post-section"><div class="post-section-label">Hook</div><div class="post-hook">"En 8 años de sesiones, lo que más escucho es siempre lo mismo."</div></div>
+          <div class="post-section"><div class="post-section-label">Cuerpo</div><div class="post-body">Comparte un patrón observado sin revelar datos personales. Demuestra experiencia y hace que quien lo lee piense "eso me pasa a mí también". Convierte seguidores en clientes.</div></div>
+          <div class="post-section"><div class="post-section-label">CTA</div><div class="post-cta">¿Te resonó? Cuéntame en privado.</div></div>
+          <div class="post-section"><div class="post-hashtags">#terapeutaholistica #experiencia #sanacion #crecimientopersonal</div></div>
+        </div>
+
+        <div class="post-card conn">
+          <span class="post-number">22</span>
+          <span class="post-type-badge">🤝 Conexión</span>
+          <div class="post-title">Afirmación de la semana</div>
+          <div class="post-section"><div class="post-section-label">Hook</div><div class="post-hook">"Esta semana repite esto cada mañana. Cuéntame qué pasa."</div></div>
+          <div class="post-section"><div class="post-section-label">Cuerpo</div><div class="post-body">Las afirmaciones son altamente compartibles. Elige una relacionada con el tema semanal. Crea serie: "Mantra de la semana" — genera hábito y fideliza seguidores.</div></div>
+          <div class="post-section"><div class="post-section-label">CTA</div><div class="post-cta">Guarda esta imagen y úsala esta semana 🙏</div></div>
+          <div class="post-section"><div class="post-hashtags">#afirmaciones #mantra #leydelatraccion #espiritualidad</div></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- VENTAS -->
+    <div class="bank-category">
+      <div class="bank-category-header">
+        <div class="bank-category-dot" style="background:#6B4E7D;"></div>
+        <span class="bank-category-title">Posts de Servicios — Venta suave</span>
+        <span class="bank-category-count">8 ideas</span>
+      </div>
+      <div class="posts-grid">
+
+        <div class="post-card sell">
+          <span class="post-number">23</span>
+          <span class="post-type-badge">✨ Servicio</span>
+          <div class="post-title">¿Para qué sirve una sesión de tarot conmigo?</div>
+          <div class="post-section"><div class="post-section-label">Hook</div><div class="post-hook">"No vengo a decirte lo que va a pasar. Vengo a ayudarte a ver lo que ya sabes."</div></div>
+          <div class="post-section"><div class="post-section-label">Cuerpo</div><div class="post-body">No el "qué" (tarot) sino el "para qué": claridad, toma de decisiones, entender patrones. Habla del antes y el después. Link en bio siempre.</div></div>
+          <div class="post-section"><div class="post-section-label">CTA</div><div class="post-cta">Primera sesión de orientación disponible. Link en bio.</div></div>
+          <div class="post-section"><div class="post-hashtags">#sesiondetarot #tarotterapeutico #agenda #herandenysana</div></div>
+        </div>
+
+        <div class="post-card sell">
+          <span class="post-number">24</span>
+          <span class="post-type-badge">✨ Servicio</span>
+          <div class="post-title">Testimonio real de cliente</div>
+          <div class="post-section"><div class="post-section-label">Hook</div><div class="post-hook">"'No sabía qué esperar y salí sabiendo exactamente qué hacer.' — Ana, CDMX"</div></div>
+          <div class="post-section"><div class="post-section-label">Cuerpo</div><div class="post-body">Los testimonios son el contenido más poderoso para vender. Pide permiso y comparte. No hace falta nombre ni foto — un fragmento de WhatsApp basta.</div></div>
+          <div class="post-section"><div class="post-section-label">CTA</div><div class="post-cta">¿Quieres vivir esto? Link en bio para agendar.</div></div>
+          <div class="post-section"><div class="post-hashtags">#testimonio #resultados #terapiasalternativas #herandeny</div></div>
+        </div>
+
+        <div class="post-card sell">
+          <span class="post-number">25</span>
+          <span class="post-type-badge">✨ Servicio</span>
+          <div class="post-title">Sesión online: cómo funciona</div>
+          <div class="post-section"><div class="post-section-label">Hook</div><div class="post-hook">"¿Vives fuera de CDMX? Las sesiones online son igual de poderosas."</div></div>
+          <div class="post-section"><div class="post-section-label">Cuerpo</div><div class="post-body">Explica plataforma, duración, qué necesitas, cómo se entrega la lectura. Eliminar esta duda convierte curiosidad en reserva.</div></div>
+          <div class="post-section"><div class="post-section-label">CTA</div><div class="post-cta">Disponible para todo el mundo hispanohablante. Agenda en bio.</div></div>
+          <div class="post-section"><div class="post-hashtags">#sesioononline #terapiaonline #tarotonline #herandenysana</div></div>
+        </div>
+
+        <div class="post-card sell">
+          <span class="post-number">26</span>
+          <span class="post-type-badge">✨ Servicio</span>
+          <div class="post-title">¿Cuándo acudir a astrología terapéutica?</div>
+          <div class="post-section"><div class="post-section-label">Hook</div><div class="post-hook">"Cuando sientes que algo no cuadra en tu vida y no sabes por qué."</div></div>
+          <div class="post-section"><div class="post-section-label">Cuerpo</div><div class="post-body">Momentos ideales: cambio de trabajo, ruptura, crisis de identidad, estancamiento, cumpleaños. Conecta el momento vital con el servicio.</div></div>
+          <div class="post-section"><div class="post-section-label">CTA</div><div class="post-cta">¿Estás en uno de estos momentos? Hablemos.</div></div>
+          <div class="post-section"><div class="post-hashtags">#astrologiaterapeutica #cartanatal #momentosvitales #herandeny</div></div>
+        </div>
+
+        <div class="post-card sell">
+          <span class="post-number">27</span>
+          <span class="post-type-badge">✨ Servicio</span>
+          <div class="post-title">Preguntas frecuentes sobre mis servicios</div>
+          <div class="post-section"><div class="post-section-label">Hook</div><div class="post-hook">"Las 3 preguntas que más me llegan por DM — las respondo aquí."</div></div>
+          <div class="post-section"><div class="post-section-label">Cuerpo</div><div class="post-body">¿Cuánto dura? ¿Necesito preparar algo? ¿Online o presencial? Reduce la fricción de compra y ahorra DMs repetitivos. Formato: pregunta + respuesta corta x3.</div></div>
+          <div class="post-section"><div class="post-section-label">CTA</div><div class="post-cta">¿Tienes más preguntas? Escríbeme al DM.</div></div>
+          <div class="post-section"><div class="post-hashtags">#preguntasfrecuentes #terapiasalternativas #herandenysana #agenda</div></div>
+        </div>
+
+        <div class="post-card sell">
+          <span class="post-number">28</span>
+          <span class="post-type-badge">✨ Servicio</span>
+          <div class="post-title">Sanación de heridas de infancia</div>
+          <div class="post-section"><div class="post-section-label">Hook</div><div class="post-hook">"Lo que viviste a los 7 años todavía está gobernando tus relaciones de adulta."</div></div>
+          <div class="post-section"><div class="post-section-label">Cuerpo</div><div class="post-body">Conecta la herida con el problema presente. El servicio más transformador y emocional de su portfolio. Las personas se reconocen en esto.</div></div>
+          <div class="post-section"><div class="post-section-label">CTA</div><div class="post-cta">¿Lista para sanar lo que viene de lejos? Link en bio.</div></div>
+          <div class="post-section"><div class="post-hashtags">#heridasinfancia #sanacionemocional #niniointerno #terapiaalternativa</div></div>
+        </div>
+
+        <div class="post-card sell">
+          <span class="post-number">29</span>
+          <span class="post-type-badge">✨ Servicio</span>
+          <div class="post-title">¿Por qué trabajo de forma personalizada?</div>
+          <div class="post-section"><div class="post-section-label">Hook</div><div class="post-hook">"No tengo un 'menú fijo'. Cada persona necesita herramientas distintas."</div></div>
+          <div class="post-section"><div class="post-section-label">Cuerpo</div><div class="post-body">Su diferencial es la personalización. Algunas personas necesitan más astrología, otras más numerología. Justifica el valor único de sus sesiones.</div></div>
+          <div class="post-section"><div class="post-section-label">CTA</div><div class="post-cta">Agenda tu primera consulta y vemos qué necesitas tú.</div></div>
+          <div class="post-section"><div class="post-hashtags">#terapiapersonalizada #enfoqueholistico #herandeny #bienestarintegral</div></div>
+        </div>
+
+        <div class="post-card sell">
+          <span class="post-number">30</span>
+          <span class="post-type-badge">✨ Servicio</span>
+          <div class="post-title">Taller de Péndulo — próxima fecha</div>
+          <div class="post-section"><div class="post-section-label">Hook</div><div class="post-hook">"¿Sabías que puedes aprender a usar el péndulo tú misma en un solo taller?"</div></div>
+          <div class="post-section"><div class="post-section-label">Cuerpo</div><div class="post-body">Anuncia con anticipación: qué aprenderás, duración, formato, precio y plazas. Doble valor: ingresos + captación de nuevos clientes para sesiones individuales.</div></div>
+          <div class="post-section"><div class="post-section-label">CTA</div><div class="post-cta">Plazas limitadas. Reserva la tuya — link en bio.</div></div>
+          <div class="post-section"><div class="post-hashtags">#tallerpendulo #radiestecia #tallerpresencial #herandeny</div></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- VISUAL GUIDE -->
+  <div class="visual-guide">
+    <h2 class="visual-title">Guía visual para <em>Canva</em></h2>
+    <div>
+      <p style="font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--terracota);margin-bottom:1rem;">Paleta de colores</p>
+      <div class="color-palette">
+        <div class="color-swatch" style="background:#C4622D;"><span class="color-label">#C4622D</span></div>
+        <div class="color-swatch" style="background:#2D1F14;"><span class="color-label">#2D1F14</span></div>
+        <div class="color-swatch" style="background:#FAF6F0;"><span class="color-label">#FAF6F0</span></div>
+        <div class="color-swatch" style="background:#C9A96E;"><span class="color-label">#C9A96E</span></div>
+        <div class="color-swatch" style="background:#E8856A;"><span class="color-label">#E8856A</span></div>
+      </div>
+      <p style="font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--terracota);margin-bottom:1rem;margin-top:1.5rem;">Tipografías</p>
+      <ul class="guide-list">
+        <li>Títulos: <strong>Cormorant Garamond</strong> (elegante, espiritual)</li>
+        <li>Cuerpo: <strong>Jost</strong> o <strong>Lato</strong> (legible, moderno)</li>
+        <li>Detalles: <strong>Great Vibes</strong> (cursiva para acentos)</li>
+      </ul>
+    </div>
+    <div>
+      <p style="font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--terracota);margin-bottom:1rem;">Reglas de diseño</p>
+      <ul class="guide-list">
+        <li>Fondo principal siempre en terracota, crema o marrón oscuro — nunca blanco puro</li>
+        <li>El estrella decorativa de su logo aparece como elemento sutil en cada post</li>
+        <li>Siempre incluir su handle @Herass_Tarot en el post (pequeño, esquina)</li>
+        <li>Ratio 1:1 (1080x1080px) para posts del feed — consistencia visual</li>
+        <li>Máximo 3 colores por post para no saturar</li>
+        <li>Texto legible en tamaño mínimo 24px para mobile</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- BIO -->
+  <div class="bio-box">
+    <h3>Propuestas de bio para Instagram</h3>
+    <div class="bio-versions">
+      <div class="bio-version">
+        <div class="bio-version-label">Versión A — Directa</div>
+        <div class="bio-version-text">
+          ✨ Terapeuta Integrativa<br>
+          🔮 Tarot · Astrología · Numerología<br>
+          🌿 Sesiones personalizadas<br>
+          📍 CDMX presencial · Online worldwide<br>
+          👇 Agenda tu sesión
+        </div>
+      </div>
+      <div class="bio-version">
+        <div class="bio-version-label">Versión B — Emocional</div>
+        <div class="bio-version-text">
+          Te acompaño a sanar lo que la vida dejó pendiente 🌅<br>
+          Tarot · Astrología · Chakras · Heridas del alma<br>
+          8+ años · CDMX & Online<br>
+          ⬇️ Primera sesión sin compromiso
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HASHTAGS -->
+  <div class="hashtags-section">
+    <h2 class="section-title">Sets de <em>hashtags</em></h2>
+    <p class="section-sub">Rota entre estos tres grupos. Nunca uses siempre los mismos.</p>
+    <div class="hashtag-groups">
+      <div class="hashtag-group">
+        <div class="hashtag-group-title">Set A — Educativo</div>
+        <div class="hashtag-list">
+          #tarot #tarotterapeutico #aprendetarot #astrologiaterapeutica #numerologia #chakras #sanacionenergetica #espiritualidad #autoconocimiento #crecimientopersonal #terapiasalternativas #bienestar #meditacion #consciencia
+        </div>
+      </div>
+      <div class="hashtag-group">
+        <div class="hashtag-group-title">Set B — Comunidad</div>
+        <div class="hashtag-list">
+          #terapeutaholistica #sanacion #heridasdelalma #reflexion #mensajesdeluniverso #despertar #luz #alma #transformacion #vidaconsciente #mujeresespirituales #comunidadesotérica #mujerhealthy
+        </div>
+      </div>
+      <div class="hashtag-group">
+        <div class="hashtag-group-title">Set C — Local + Servicios</div>
+        <div class="hashtag-list">
+          #herandeny #herandenysana #tarotcdmx #astrologiacdmx #terapiaonline #sesiondetarot #lecturadetarot #xochimilco #ciudaddemexico #terapiamexico #tarotlatam #espiritualidadlatam
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Posts de Frase — Herandeny Sánchez</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --terracota:#C4622D; --terracota-light:#E8856A;
+    --cream:#FAF6F0; --brown-dark:#2D1F14; --brown-mid:#5C3D2A; --brown-light:#8B6150;
+    --gold:#C9A96E; --gold-light:#E8D5B0;
+    --edu-t:#4A7C5F; --edu-a:#3D6478; --conn:#C4622D; --sell:#6B4E7D;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Jost',sans-serif;background:#111;color:white;}
+
+  /* HEADER */
+  .ph{background:var(--brown-dark);padding:3rem 4rem;border-bottom:3px solid var(--terracota);position:relative;overflow:hidden;}
+  .ph::after{content:'FRASES';position:absolute;font-family:'Cormorant Garamond',serif;font-size:14rem;font-weight:600;color:rgba(255,255,255,0.03);right:-1rem;top:50%;transform:translateY(-50%);white-space:nowrap;pointer-events:none;}
+  .ph-label{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--terracota-light);margin-bottom:.6rem;}
+  .ph-h1{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:300;color:white;line-height:1.2;}
+  .ph-h1 em{font-style:italic;color:var(--gold);}
+  .ph-sub{margin-top:.8rem;color:rgba(255,255,255,.45);font-size:.88rem;}
+
+  /* LEGEND */
+  .legend{display:flex;gap:1.5rem;flex-wrap:wrap;padding:1.2rem 4rem;background:rgba(255,255,255,0.03);border-bottom:1px solid rgba(255,255,255,0.06);}
+  .li{display:flex;align-items:center;gap:.6rem;font-size:.75rem;color:rgba(255,255,255,.5);}
+  .ld{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+
+  /* GRID */
+  .grid{display:grid;grid-template-columns:repeat(3,380px);gap:2rem;padding:3rem 4rem;justify-content:start;}
+
+  /* CADA POST — cuadrado 1:1 */
+  .post{width:380px;height:380px;position:relative;overflow:hidden;cursor:default;flex-shrink:0;}
+
+  /* LABEL EXTERIOR */
+  .post-label{
+    font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;
+    color:rgba(255,255,255,.3);margin-bottom:.6rem;
+    display:flex;align-items:center;gap:.5rem;
+  }
+  .post-label-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+  .post-wrap{margin-bottom:1.8rem;}
+
+  /* TIP */
+  .post-tip{font-size:.75rem;color:rgba(255,255,255,.28);line-height:1.5;margin-top:.5rem;padding:.7rem 1rem;border-left:2px solid rgba(255,255,255,.08);}
+
+  /* ══════════════════════
+     ESTILO A — TERRACOTA OSCURO
+     Frase blanca centrada, estrella, handle
+  ══════════════════════ */
+  .a{
+    background:var(--brown-dark);
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    padding:2.5rem;text-align:center;
+    position:relative;overflow:hidden;
+  }
+  .a::before{content:'';position:absolute;top:-4rem;left:-4rem;width:15rem;height:15rem;border-radius:50%;background:radial-gradient(circle,rgba(196,98,45,.2) 0%,transparent 70%);}
+  .a::after{content:'';position:absolute;bottom:-4rem;right:-4rem;width:12rem;height:12rem;border-radius:50%;background:radial-gradient(circle,rgba(196,98,45,.12) 0%,transparent 70%);}
+  .a-star{position:absolute;top:1.5rem;left:50%;transform:translateX(-50%);opacity:.3;}
+  .a-q{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:300;font-style:italic;color:white;line-height:1.4;position:relative;}
+  .a-q em{font-style:normal;font-weight:500;color:var(--terracota-light);}
+  .a-line{width:2rem;height:1px;background:rgba(196,98,45,.5);margin:1.2rem auto;position:relative;}
+  .a-author{font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);position:relative;}
+  .a-handle{position:absolute;bottom:.9rem;right:1rem;font-size:.55rem;letter-spacing:.06em;color:rgba(255,255,255,.18);}
+
+  /* ══════════════════════
+     ESTILO B — CREMA ELEGANTE
+     Frase oscura, trazo dorado
+  ══════════════════════ */
+  .b{
+    background:var(--cream);
+    display:flex;flex-direction:column;justify-content:center;
+    padding:2.5rem;
+    position:relative;overflow:hidden;
+  }
+  .b::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);}
+  .b-num{font-family:'Cormorant Garamond',serif;font-size:6rem;font-weight:600;color:rgba(201,169,110,.1);position:absolute;top:-1rem;right:.5rem;line-height:1;}
+  .b-label{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+  .b-q{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;color:var(--brown-dark);line-height:1.35;}
+  .b-q em{font-style:italic;color:var(--terracota);}
+  .b-dash{width:1.5rem;height:2px;background:var(--gold);margin:1.2rem 0;}
+  .b-author{font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--brown-light);}
+  .b-handle{position:absolute;bottom:.9rem;right:1rem;font-size:.55rem;letter-spacing:.06em;color:var(--brown-light);}
+
+  /* ══════════════════════
+     ESTILO C — TERRACOTA SÓLIDO
+     Frase blanca grande, mínimo
+  ══════════════════════ */
+  .c{
+    background:var(--terracota);
+    display:flex;flex-direction:column;justify-content:space-between;
+    padding:2rem;
+    position:relative;overflow:hidden;
+  }
+  .c::before{content:'';position:absolute;bottom:-5rem;right:-5rem;width:18rem;height:18rem;border-radius:50%;background:rgba(255,255,255,.06);}
+  .c-top{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);}
+  .c-q{font-family:'Cormorant Garamond',serif;font-size:1.75rem;font-weight:300;color:white;line-height:1.3;position:relative;}
+  .c-q em{font-style:italic;font-weight:500;}
+  .c-bottom{display:flex;justify-content:space-between;align-items:flex-end;position:relative;}
+  .c-author{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);}
+  .c-handle{font-size:.55rem;letter-spacing:.06em;color:rgba(255,255,255,.35);}
+
+  /* ══════════════════════
+     ESTILO D — VERDE OSCURO (Educativo)
+     Frase + contexto corto
+  ══════════════════════ */
+  .d{
+    background:#0C1E14;
+    display:flex;flex-direction:column;justify-content:center;
+    padding:2.2rem;
+    position:relative;overflow:hidden;
+  }
+  .d::before{content:'';position:absolute;top:-3rem;right:-3rem;width:12rem;height:12rem;border-radius:50%;background:radial-gradient(circle,rgba(74,124,95,.25) 0%,transparent 70%);}
+  .d-label{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:#7EC4A0;margin-bottom:1rem;}
+  .d-q{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:300;font-style:italic;color:white;line-height:1.4;position:relative;}
+  .d-q em{font-style:normal;font-weight:500;color:#7EC4A0;}
+  .d-sep{width:2rem;height:1px;background:rgba(74,124,95,.5);margin:1rem 0;}
+  .d-context{font-size:.78rem;color:rgba(255,255,255,.4);line-height:1.6;}
+  .d-handle{position:absolute;bottom:.9rem;right:1rem;font-size:.55rem;letter-spacing:.06em;color:rgba(255,255,255,.18);}
+
+  /* ══════════════════════
+     ESTILO E — AZUL MARINO (Astrología)
+     Frase + dato curioso
+  ══════════════════════ */
+  .e{
+    background:#09131C;
+    display:flex;flex-direction:column;justify-content:center;
+    padding:2.2rem;
+    position:relative;overflow:hidden;
+  }
+  .e::before{content:'';position:absolute;bottom:-4rem;left:-4rem;width:14rem;height:14rem;border-radius:50%;background:radial-gradient(circle,rgba(61,100,120,.3) 0%,transparent 70%);}
+  .e-label{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:#7BAFC4;margin-bottom:1rem;}
+  .e-q{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:300;font-style:italic;color:white;line-height:1.4;position:relative;}
+  .e-q em{font-style:normal;font-weight:500;color:#7BAFC4;}
+  .e-sep{width:2rem;height:1px;background:rgba(61,100,120,.5);margin:1rem 0;}
+  .e-context{font-size:.78rem;color:rgba(255,255,255,.38);line-height:1.6;}
+  .e-handle{position:absolute;bottom:.9rem;right:1rem;font-size:.55rem;letter-spacing:.06em;color:rgba(255,255,255,.18);}
+
+  /* ══════════════════════
+     ESTILO F — MORADO (Servicio)
+     Frase + CTA suave
+  ══════════════════════ */
+  .f{
+    background:#160D20;
+    display:flex;flex-direction:column;justify-content:space-between;
+    padding:2rem;
+    position:relative;overflow:hidden;
+  }
+  .f::before{content:'';position:absolute;top:-3rem;right:-3rem;width:12rem;height:12rem;border-radius:50%;background:radial-gradient(circle,rgba(107,78,125,.3) 0%,transparent 70%);}
+  .f-label{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:#B08FCC;position:relative;}
+  .f-q{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:300;font-style:italic;color:white;line-height:1.4;position:relative;}
+  .f-q em{font-style:normal;font-weight:500;color:#B08FCC;}
+  .f-bottom{position:relative;}
+  .f-cta{display:inline-block;background:rgba(107,78,125,.3);border:1px solid rgba(176,143,204,.25);color:#B08FCC;padding:.4rem .9rem;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;border-radius:2px;margin-bottom:.5rem;}
+  .f-handle{font-size:.55rem;letter-spacing:.06em;color:rgba(255,255,255,.2);}
+
+  /* ══════════════════════
+     ESTILO G — GRAN VIBES script
+     Frase en cursiva elegante, fondo oscuro + oro
+  ══════════════════════ */
+  .g{
+    background:var(--brown-dark);
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    padding:2.5rem;text-align:center;
+    position:relative;overflow:hidden;
+  }
+  .g::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,169,110,.08) 0%,transparent 50%);}
+  .g-border{position:absolute;inset:.7rem;border:1px solid rgba(201,169,110,.15);pointer-events:none;}
+  .g-q{font-family:'Great Vibes',cursive;font-size:2.4rem;color:var(--gold);line-height:1.3;position:relative;}
+  .g-line{width:3rem;height:1px;background:rgba(201,169,110,.4);margin:1rem auto;position:relative;}
+  .g-sub{font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);position:relative;}
+  .g-handle{position:absolute;bottom:.9rem;right:1rem;font-size:.55rem;letter-spacing:.06em;color:rgba(255,255,255,.18);}
+
+  /* ══════════════════════
+     ESTILO H — SPLIT fondo partido
+     Mitad crema / mitad terracota
+  ══════════════════════ */
+  .h{
+    display:grid;grid-template-columns:1fr 1fr;
+    position:relative;overflow:hidden;
+  }
+  .h-left{background:var(--cream);display:flex;flex-direction:column;justify-content:center;padding:1.8rem 1.5rem 1.8rem 1.8rem;}
+  .h-right{background:var(--terracota);display:flex;flex-direction:column;justify-content:center;padding:1.8rem 1.8rem 1.8rem 1.5rem;}
+  .h-label{font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brown-light);margin-bottom:.8rem;}
+  .h-q1{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;color:var(--brown-dark);line-height:1.35;}
+  .h-rlabel{font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.8rem;}
+  .h-q2{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;font-weight:300;color:white;line-height:1.45;}
+  .h-handle{position:absolute;bottom:.8rem;right:.9rem;font-size:.55rem;letter-spacing:.06em;color:rgba(255,255,255,.25);}
+
+  /* ══════════════════════
+     ESTILO I — NÚMERO GRANDE
+     El número de la semana / afirmación
+  ══════════════════════ */
+  .i{
+    background:var(--cream);
+    display:flex;flex-direction:column;justify-content:center;
+    padding:2rem;
+    position:relative;overflow:hidden;
+  }
+  .i-num{font-family:'Cormorant Garamond',serif;font-size:9rem;font-weight:600;color:rgba(196,98,45,.12);position:absolute;top:-1.5rem;right:-.5rem;line-height:1;}
+  .i-label{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--terracota);margin-bottom:.8rem;position:relative;}
+  .i-q{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;color:var(--brown-dark);line-height:1.35;position:relative;}
+  .i-q em{font-style:italic;color:var(--terracota);}
+  .i-dash{width:1.5rem;height:2px;background:var(--terracota);margin:1rem 0;position:relative;}
+  .i-sub{font-size:.78rem;color:var(--brown-light);line-height:1.6;position:relative;}
+  .i-handle{position:absolute;bottom:.9rem;right:1rem;font-size:.55rem;letter-spacing:.06em;color:var(--brown-light);}
+
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="ph">
+  <p class="ph-label">Posts de imagen única · @Herass_Tarot</p>
+  <h1 class="ph-h1">Frases <em>inspiracionales</em></h1>
+  <p class="ph-sub">9 estilos visuales distintos — 1 imagen, 1 frase, máximo impacto · Todos en 1080×1080px</p>
+</div>
+
+<!-- LEYENDA -->
+<div class="legend">
+  <div class="li"><div class="ld" style="background:#4A7C5F;"></div>📚 Edu Tarot</div>
+  <div class="li"><div class="ld" style="background:#3D6478;"></div>🔭 Edu Astrología</div>
+  <div class="li"><div class="ld" style="background:#C4622D;"></div>🤝 Conexión</div>
+  <div class="li"><div class="ld" style="background:#6B4E7D;"></div>✨ Servicio</div>
+  <div class="li"><div class="ld" style="background:#C9A96E;"></div>⭐ Universal</div>
+</div>
+
+<!-- GRID DE POSTS -->
+<div class="grid">
+
+  <!-- POST 1 — Estilo A · Oscuro centrado · Conexión -->
+  <div>
+    <div class="post-wrap">
+      <div class="post-label"><div class="post-label-dot" style="background:#C4622D;"></div>🤝 Conexión · Estilo A — Oscuro + centrado</div>
+    </div>
+    <div class="post a">
+      <div class="a-star">
+        <svg width="36" height="36" viewBox="0 0 80 80" fill="none"><line x1="40" y1="0" x2="40" y2="80" stroke="white" stroke-width=".8" opacity=".4"/><line x1="0" y1="40" x2="80" y2="40" stroke="white" stroke-width=".8" opacity=".4"/><line x1="11.7" y1="11.7" x2="68.3" y2="68.3" stroke="white" stroke-width=".8" opacity=".4"/><line x1="68.3" y1="11.7" x2="11.7" y2="68.3" stroke="white" stroke-width=".8" opacity=".4"/></svg>
+      </div>
+      <p class="a-q">"Sanar no es olvidar.<br>Es aprender a cargar<br>la historia <em>sin que te pese.</em>"</p>
+      <div class="a-line"></div>
+      <p class="a-author">Herandeny Sánchez</p>
+      <div class="a-handle">@Herass_Tarot</div>
+    </div>
+    <div class="post-tip">💡 Fondo #2D1F14, frase centrada en Cormorant Garamond cursiva, estrella decorativa arriba.</div>
+  </div>
+
+  <!-- POST 2 — Estilo B · Crema dorado · Universal -->
+  <div>
+    <div class="post-wrap">
+      <div class="post-label"><div class="post-label-dot" style="background:#C9A96E;"></div>⭐ Universal · Estilo B — Crema + franja dorada</div>
+    </div>
+    <div class="post b">
+      <div class="b-num">"</div>
+      <div class="b-label">Reflexión de la semana</div>
+      <p class="b-q">El problema no es el problema.<br><em>Tu relación con el problema</em><br>es el problema.</p>
+      <div class="b-dash"></div>
+      <p class="b-author">Herandeny Sánchez</p>
+      <div class="b-handle">@Herass_Tarot</div>
+    </div>
+    <div class="post-tip">💡 Fondo #FAF6F0, franja dorada arriba, comilla grande semitransparente, texto en oscuro.</div>
+  </div>
+
+  <!-- POST 3 — Estilo C · Terracota sólido · Conexión -->
+  <div>
+    <div class="post-wrap">
+      <div class="post-label"><div class="post-label-dot" style="background:#C4622D;"></div>🤝 Conexión · Estilo C — Terracota sólido</div>
+    </div>
+    <div class="post c">
+      <div class="c-top">@Herass_Tarot</div>
+      <p class="c-q">"Te acompaño a sanar<br><em>lo que la vida<br>dejó pendiente.</em>"</p>
+      <div class="c-bottom">
+        <span class="c-author">Herandeny Sánchez</span>
+        <span class="c-handle">herandenysana.com</span>
+      </div>
+    </div>
+    <div class="post-tip">💡 Fondo #C4622D sólido, frase blanca grande, burbuja decorativa esquina inferior. El tagline principal de la marca.</div>
+  </div>
+
+  <!-- POST 4 — Estilo D · Verde · Educativo Tarot -->
+  <div>
+    <div class="post-wrap">
+      <div class="post-label"><div class="post-label-dot" style="background:#4A7C5F;"></div>📚 Edu Tarot · Estilo D — Verde oscuro + contexto</div>
+    </div>
+    <div class="post d">
+      <div class="d-label">Tarot Terapéutico · Reflexión</div>
+      <p class="d-q">"El tarot no predice el futuro.<br>Te muestra <em>lo que ya sabes</em><br>pero no te atreves a ver."</p>
+      <div class="d-sep"></div>
+      <p class="d-context">Cada carta es un espejo, no una sentencia. La claridad ya está en ti.</p>
+      <div class="d-handle">@Herass_Tarot</div>
+    </div>
+    <div class="post-tip">💡 Fondo #0C1E14, texto blanco, acento en verde #7EC4A0, pequeño texto de contexto abajo.</div>
+  </div>
+
+  <!-- POST 5 — Estilo E · Azul · Astrología -->
+  <div>
+    <div class="post-wrap">
+      <div class="post-label"><div class="post-label-dot" style="background:#3D6478;"></div>🔭 Edu Astrología · Estilo E — Azul marino</div>
+    </div>
+    <div class="post e">
+      <div class="e-label">Astrología Terapéutica · Reflexión</div>
+      <p class="e-q">"Tu carta natal no es tu destino.<br>Es el mapa. <em>Tú eliges</em><br>cómo caminar."</p>
+      <div class="e-sep"></div>
+      <p class="e-context">Los astros influyen, pero no determinan. Conocerte es tener el poder de elegir.</p>
+      <div class="e-handle">@Herass_Tarot</div>
+    </div>
+    <div class="post-tip">💡 Fondo #09131C, acento en azul #7BAFC4, contexto pequeño en gris claro.</div>
+  </div>
+
+  <!-- POST 6 — Estilo F · Morado · Servicio -->
+  <div>
+    <div class="post-wrap">
+      <div class="post-label"><div class="post-label-dot" style="background:#6B4E7D;"></div>✨ Servicio · Estilo F — Morado + CTA suave</div>
+    </div>
+    <div class="post f">
+      <div class="f-label">Sesión personalizada</div>
+      <p class="f-q">"Encuentra claridad<br><em>cuando todo</em><br>parece perdido."</p>
+      <div class="f-bottom">
+        <div class="f-cta">Agenda tu sesión · link en bio</div>
+        <div class="f-handle">@Herass_Tarot</div>
+      </div>
+    </div>
+    <div class="post-tip">💡 Fondo #160D20, acento morado #B08FCC, CTA integrado como elemento visual — no como botón agresivo.</div>
+  </div>
+
+  <!-- POST 7 — Estilo G · Great Vibes script · Universal -->
+  <div>
+    <div class="post-wrap">
+      <div class="post-label"><div class="post-label-dot" style="background:#C9A96E;"></div>⭐ Universal · Estilo G — Script dorado elegante</div>
+    </div>
+    <div class="post g">
+      <div class="g-border"></div>
+      <p class="g-q">Cada amanecer es<br>una oportunidad<br>de sanar</p>
+      <div class="g-line"></div>
+      <p class="g-sub">Terapias Alternativas · Amaneceres</p>
+      <div class="g-handle">@Herass_Tarot</div>
+    </div>
+    <div class="post-tip">💡 Fondo #2D1F14, frase en Great Vibes dorado, borde fino interior. El más compartible y guardado.</div>
+  </div>
+
+  <!-- POST 8 — Estilo H · Split · Conexión -->
+  <div>
+    <div class="post-wrap">
+      <div class="post-label"><div class="post-label-dot" style="background:#C4622D;"></div>🤝 Conexión · Estilo H — Fondo partido crema/terracota</div>
+    </div>
+    <div class="post h">
+      <div class="h-left">
+        <div class="h-label">Lo que sientes</div>
+        <p class="h-q1">"Sé lo que debería hacer, pero algo me lo impide."</p>
+      </div>
+      <div class="h-right">
+        <div class="h-rlabel">Lo que es posible</div>
+        <p class="h-q2">"Puedo ayudarte a entender qué es ese algo y cómo soltarlo."</p>
+      </div>
+      <div class="h-handle">@Herass_Tarot</div>
+    </div>
+    <div class="post-tip">💡 Post de contraste: problema vs solución. Muy efectivo para generar identificación y llevar al DM.</div>
+  </div>
+
+  <!-- POST 9 — Estilo I · Número grande · Afirmación -->
+  <div>
+    <div class="post-wrap">
+      <div class="post-label"><div class="post-label-dot" style="background:#C9A96E;"></div>⭐ Universal · Estilo I — Afirmación semanal</div>
+    </div>
+    <div class="post i">
+      <div class="i-num">✦</div>
+      <div class="i-label">Afirmación de la semana</div>
+      <p class="i-q">Merezco <em>tomar decisiones</em><br>desde la claridad,<br>no desde el miedo.</p>
+      <div class="i-dash"></div>
+      <p class="i-sub">Repite esto cada mañana esta semana.<br>Cuéntame en comentarios qué pasa.</p>
+      <div class="i-handle">@Herass_Tarot</div>
+    </div>
+    <div class="post-tip">💡 Fondo crema #FAF6F0, símbolo grande semitransparente, afirmación en texto oscuro. El más guardado.</div>
+  </div>
+
+</div>
+
+</body>
+</html>

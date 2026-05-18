@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carruseles Instagram — Herandeny Sánchez</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --terracota:#C4622D; --terracota-light:#E8856A;
+    --cream:#FAF6F0; --brown-dark:#2D1F14; --brown-mid:#5C3D2A; --brown-light:#8B6150;
+    --gold:#C9A96E; --gold-light:#E8D5B0;
+    --edu-t:#4A7C5F; --edu-a:#3D6478; --conn:#C4622D; --sell:#6B4E7D;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Jost',sans-serif;background:#111;color:white;}
+
+  .page-header{background:var(--brown-dark);padding:3rem 4rem;border-bottom:3px solid var(--terracota);position:relative;overflow:hidden;}
+  .page-header::after{content:'CARRUSELES';position:absolute;font-family:'Cormorant Garamond',serif;font-size:10rem;font-weight:600;color:rgba(255,255,255,0.03);right:-1rem;top:50%;transform:translateY(-50%);white-space:nowrap;pointer-events:none;}
+  .ph-label{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--terracota-light);margin-bottom:.6rem;}
+  .ph-h1{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:300;color:white;line-height:1.2;}
+  .ph-h1 em{font-style:italic;color:var(--gold);}
+  .ph-sub{margin-top:.8rem;color:rgba(255,255,255,0.45);font-size:.88rem;}
+
+  .legend{display:flex;gap:1.5rem;flex-wrap:wrap;padding:1.2rem 4rem;background:rgba(255,255,255,0.03);border-bottom:1px solid rgba(255,255,255,0.06);}
+  .li{display:flex;align-items:center;gap:.6rem;font-size:.75rem;color:rgba(255,255,255,0.5);}
+  .ld{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+
+  .cs{padding:3rem 4rem;}
+  .cb{margin-bottom:4rem;}
+  .type-bar{height:3px;width:100%;border-radius:2px;margin-bottom:1.5rem;}
+  .cm{display:flex;align-items:center;gap:1.5rem;margin-bottom:2rem;}
+  .cn{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:rgba(255,255,255,0.1);line-height:1;}
+  .ctag{display:inline-block;padding:.25rem .8rem;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;border-radius:2px;margin-bottom:.4rem;font-weight:600;}
+  .ctitle{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:white;line-height:1.2;}
+  .chint{font-size:.72rem;color:rgba(255,255,255,0.28);margin-top:.3rem;letter-spacing:.05em;}
+
+  .stw{overflow:hidden;border-radius:2px;}
+  .st{display:flex;transition:transform .4s cubic-bezier(.25,.46,.45,.94);}
+  .sl{flex-shrink:0;width:380px;height:380px;position:relative;overflow:hidden;}
+
+  .snav{display:flex;align-items:center;gap:1rem;margin-top:1.2rem;}
+  .nb{width:2.5rem;height:2.5rem;border:1px solid rgba(255,255,255,0.12);background:transparent;color:white;cursor:pointer;display:flex;align-items:center;justify-content:center;border-radius:2px;transition:all .2s;font-size:1rem;}
+  .nb:hover{border-color:var(--terracota);background:var(--terracota);}
+  .nb:disabled{opacity:.2;pointer-events:none;}
+  .dots{display:flex;gap:.4rem;align-items:center;}
+  .dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.15);cursor:pointer;transition:all .2s;}
+  .dot.active{width:20px;border-radius:3px;}
+  .sc{margin-left:auto;font-size:.72rem;color:rgba(255,255,255,0.28);letter-spacing:.1em;}
+
+  .tip{margin-top:1.2rem;padding:1rem 1.5rem;font-size:.8rem;line-height:1.6;}
+  hr.div{border:none;border-top:1px solid rgba(255,255,255,0.06);margin:0 0 3rem;}
+  .handle{position:absolute;bottom:.9rem;right:1rem;font-size:.55rem;letter-spacing:.06em;color:rgba(255,255,255,0.2);}
+
+  /* ── VERDE (Edu Tarot) ── */
+  .g-cover{background:#0C1E14;display:flex;flex-direction:column;justify-content:flex-end;padding:2rem;position:relative;overflow:hidden;}
+  .g-glow{position:absolute;top:-4rem;right:-4rem;width:15rem;height:15rem;border-radius:50%;background:radial-gradient(circle,rgba(74,124,95,.3) 0%,transparent 70%);}
+  .g-star{position:absolute;top:1.5rem;left:1.5rem;opacity:.3;}
+  .g-eyebrow{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:#7EC4A0;margin-bottom:.8rem;position:relative;}
+  .g-h{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:white;line-height:1.15;position:relative;}
+  .g-h em{font-style:italic;color:#7EC4A0;display:block;}
+
+  .g-list{background:#EFF7F2;display:flex;flex-direction:column;justify-content:center;padding:1.8rem;position:relative;overflow:hidden;}
+  .g-item{display:flex;align-items:flex-start;gap:.8rem;padding:.6rem 0;border-bottom:1px solid rgba(74,124,95,.15);}
+  .g-item:last-child{border-bottom:none;}
+  .g-ico{width:2rem;height:2rem;border-radius:2px;background:#4A7C5F;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0;}
+  .g-iname{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:#0C1E14;line-height:1.2;}
+  .g-idesc{font-size:.72rem;color:#4A7C5F;line-height:1.4;}
+
+  .g-detail{background:#0C1E14;display:flex;flex-direction:column;justify-content:center;padding:2rem;position:relative;overflow:hidden;}
+  .g-dbg{position:absolute;bottom:-1rem;right:.5rem;font-family:'Cormorant Garamond',serif;font-size:5rem;font-weight:600;color:rgba(74,124,95,.08);line-height:1;}
+  .g-dlabel{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:#7EC4A0;margin-bottom:.8rem;}
+  .g-dname{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;color:white;margin-bottom:.5rem;}
+  .g-dsub{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(126,196,160,.7);margin-bottom:.8rem;}
+  .g-ddesc{font-size:.8rem;color:rgba(255,255,255,.5);line-height:1.8;}
+  .g-dq{margin-top:.9rem;padding:.7rem 1rem;border-left:2px solid #4A7C5F;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.95rem;color:rgba(255,255,255,.4);}
+
+  .g-tip{background:#132B1E;display:flex;flex-direction:column;justify-content:center;padding:2rem;position:relative;overflow:hidden;}
+  .g-tip::before{content:'';position:absolute;bottom:-3rem;right:-3rem;width:10rem;height:10rem;border-radius:50%;background:rgba(74,124,95,.12);}
+  .g-tlabel{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:#7EC4A0;margin-bottom:1rem;position:relative;}
+  .g-th{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:white;line-height:1.3;position:relative;}
+  .g-th em{font-style:italic;color:#7EC4A0;}
+  .g-tdesc{font-size:.8rem;color:rgba(255,255,255,.45);line-height:1.7;margin-top:.8rem;position:relative;}
+
+  .g-cta{background:#4A7C5F;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:2rem;text-align:center;gap:.8rem;position:relative;overflow:hidden;}
+  .g-cta::before{content:'';position:absolute;bottom:-3rem;right:-3rem;width:11rem;height:11rem;border-radius:50%;background:rgba(255,255,255,.06);}
+  .g-ctaq{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-style:italic;color:white;line-height:1.3;position:relative;}
+  .g-ctasub{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6);position:relative;}
+  .g-ctabtn{background:white;color:#4A7C5F;padding:.5rem 1.2rem;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;border-radius:2px;position:relative;}
+
+  /* ── AZUL (Edu Astrología) ── */
+  .b-cover{background:#09131C;display:flex;flex-direction:column;justify-content:center;padding:2.2rem;position:relative;overflow:hidden;}
+  .b-glow{position:absolute;top:-5rem;left:-5rem;width:18rem;height:18rem;border-radius:50%;background:radial-gradient(circle,rgba(61,100,120,.35) 0%,transparent 70%);}
+  .b-tag{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:#7BAFC4;margin-bottom:1rem;position:relative;}
+  .b-h{font-family:'Cormorant Garamond',serif;font-size:2.1rem;font-weight:300;color:white;line-height:1.1;position:relative;}
+  .b-h strong{font-weight:600;font-style:italic;display:block;color:#7BAFC4;}
+  .b-sub{font-size:.78rem;color:rgba(255,255,255,.32);margin-top:1rem;line-height:1.6;position:relative;}
+
+  .b-sl{display:flex;flex-direction:column;justify-content:center;padding:2rem;position:relative;overflow:hidden;}
+  .b-bnum{font-family:'Cormorant Garamond',serif;font-size:5rem;font-weight:600;position:absolute;right:1rem;bottom:-.5rem;opacity:.06;color:white;line-height:1;}
+  .b-dot{width:2.8rem;height:2.8rem;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:.8rem;}
+  .b-name{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:500;color:white;margin-bottom:.3rem;}
+  .b-sub2{font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;margin-bottom:.8rem;}
+  .b-desc{font-size:.8rem;color:rgba(255,255,255,.48);line-height:1.8;}
+  .b-key{margin-top:.8rem;padding:.7rem;border-left:2px solid rgba(123,175,196,.35);font-size:.78rem;font-style:italic;color:rgba(255,255,255,.3);font-family:'Cormorant Garamond',serif;}
+
+  .b-cta{background:#3D6478;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:2rem;text-align:center;gap:.8rem;position:relative;overflow:hidden;}
+  .b-cta::before{content:'';position:absolute;top:-3rem;left:-3rem;width:10rem;height:10rem;border-radius:50%;background:rgba(255,255,255,.06);}
+  .b-ctaq{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-style:italic;color:white;line-height:1.3;position:relative;}
+  .b-ctasub{font-size:.75rem;color:rgba(255,255,255,.6);line-height:1.6;max-width:260px;position:relative;}
+  .b-ctabtn{background:white;color:#3D6478;padding:.5rem 1.2rem;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;border-radius:2px;position:relative;}
+
+  /* ── TERRACOTA (Conexión) ── */
+  .t-cover{background:var(--terracota);display:flex;flex-direction:column;justify-content:space-between;padding:2rem;position:relative;overflow:hidden;}
+  .t-wm{position:absolute;bottom:-2rem;left:-1rem;font-family:'Cormorant Garamond',serif;font-size:9rem;font-weight:600;color:rgba(255,255,255,.06);line-height:1;pointer-events:none;}
+  .t-hand{font-size:.62rem;letter-spacing:.1em;color:rgba(255,255,255,.42);position:relative;}
+  .t-num{font-family:'Cormorant Garamond',serif;font-size:5rem;font-weight:300;color:rgba(255,255,255,.18);line-height:1;margin-bottom:-1rem;position:relative;}
+  .t-h{font-family:'Cormorant Garamond',serif;font-size:1.85rem;font-weight:400;color:white;line-height:1.2;position:relative;}
+  .t-h em{font-style:italic;display:block;}
+  .t-swipe{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.42);position:relative;}
+
+  .t-cream{background:var(--cream);display:flex;flex-direction:column;justify-content:center;padding:2.2rem;position:relative;overflow:hidden;}
+  .t-cbg{position:absolute;top:-2rem;right:-1rem;font-family:'Cormorant Garamond',serif;font-size:7rem;font-weight:600;color:rgba(196,98,45,.07);line-height:1;}
+  .t-clabel{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--terracota);margin-bottom:.8rem;position:relative;}
+  .t-ch{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:500;color:var(--brown-dark);line-height:1.2;margin-bottom:.8rem;position:relative;}
+  .t-cdesc{font-size:.8rem;color:var(--brown-mid);line-height:1.8;position:relative;}
+  .t-cq{margin-top:.8rem;padding:.7rem 1rem;border-left:2px solid var(--terracota);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.95rem;color:var(--brown-light);background:white;position:relative;}
+
+  .t-dark{background:var(--brown-dark);display:flex;flex-direction:column;justify-content:center;padding:2.2rem;position:relative;overflow:hidden;}
+  .t-dark::before{content:'';position:absolute;top:-3rem;right:-3rem;width:12rem;height:12rem;border-radius:50%;background:rgba(196,98,45,.1);}
+  .t-dbg{position:absolute;bottom:-1rem;left:-.5rem;font-family:'Cormorant Garamond',serif;font-size:7rem;font-weight:600;color:rgba(255,255,255,.04);line-height:1;}
+  .t-dlabel{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--terracota-light);margin-bottom:.8rem;position:relative;}
+  .t-dh{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:500;color:white;line-height:1.2;margin-bottom:.8rem;position:relative;}
+  .t-ddesc{font-size:.8rem;color:rgba(255,255,255,.48);line-height:1.8;position:relative;}
+  .t-dq{margin-top:.8rem;padding:.7rem 1rem;border-left:2px solid var(--terracota-light);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.92rem;color:rgba(255,255,255,.32);position:relative;}
+
+  .t-cta{background:var(--brown-dark);display:flex;flex-direction:column;justify-content:center;padding:2.2rem;gap:.8rem;position:relative;overflow:hidden;}
+  .t-cta::before{content:'';position:absolute;bottom:-3rem;right:-3rem;width:12rem;height:12rem;border-radius:50%;background:rgba(196,98,45,.12);}
+  .t-ctalabel{font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--terracota-light);position:relative;}
+  .t-ctah{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-style:italic;color:white;line-height:1.3;position:relative;}
+  .t-ctasub{font-size:.8rem;color:rgba(255,255,255,.4);line-height:1.6;position:relative;}
+  .t-ctabtn{display:inline-flex;align-items:center;gap:.4rem;background:var(--terracota);color:white;padding:.55rem 1.2rem;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;border-radius:2px;width:fit-content;position:relative;}
+
+  /* ── MORADO (Servicio) ── */
+  .p-cover{background:#160D20;display:flex;flex-direction:column;justify-content:center;padding:2.2rem;position:relative;overflow:hidden;}
+  .p-glow{position:absolute;bottom:-4rem;right:-4rem;width:16rem;height:16rem;border-radius:50%;background:radial-gradient(circle,rgba(107,78,125,.35) 0%,transparent 70%);}
+  .p-tag{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:#B08FCC;margin-bottom:.8rem;position:relative;}
+  .p-h{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:white;line-height:1.15;position:relative;}
+  .p-h em{font-style:italic;color:#B08FCC;display:block;}
+  .p-sub{font-size:.78rem;color:rgba(255,255,255,.32);margin-top:.8rem;line-height:1.6;position:relative;}
+
+  .p-lav{background:#F4F0F8;display:flex;flex-direction:column;justify-content:center;padding:2.2rem;position:relative;overflow:hidden;}
+  .p-lbg{position:absolute;top:-1.5rem;right:-.5rem;font-family:'Cormorant Garamond',serif;font-size:7rem;font-weight:600;color:rgba(107,78,125,.07);line-height:1;}
+  .p-llabel{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:#6B4E7D;margin-bottom:.8rem;position:relative;}
+  .p-lh{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:500;color:#160D20;line-height:1.2;margin-bottom:.7rem;position:relative;}
+  .p-ldesc{font-size:.8rem;color:#5C3D6A;line-height:1.8;position:relative;}
+  .p-lq{margin-top:.8rem;padding:.7rem 1rem;border-left:2px solid #6B4E7D;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.92rem;color:#8B6B9A;background:white;position:relative;}
+
+  .p-dark{background:#160D20;display:flex;flex-direction:column;justify-content:center;padding:2.2rem;position:relative;overflow:hidden;}
+  .p-dark::before{content:'';position:absolute;top:-3rem;left:-3rem;width:12rem;height:12rem;border-radius:50%;background:rgba(107,78,125,.15);}
+  .p-dlabel{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:#B08FCC;margin-bottom:.8rem;position:relative;}
+  .p-dh{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:white;line-height:1.2;margin-bottom:.8rem;position:relative;}
+  .p-ddesc{font-size:.8rem;color:rgba(255,255,255,.45);line-height:1.8;position:relative;}
+  .p-dq{margin-top:.8rem;padding:.7rem 1rem;border-left:2px solid rgba(176,143,204,.35);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.9rem;color:rgba(255,255,255,.28);position:relative;}
+
+  .p-cta{background:#6B4E7D;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:2rem;text-align:center;gap:.9rem;position:relative;overflow:hidden;}
+  .p-cta::before{content:'';position:absolute;bottom:-3rem;left:-3rem;width:11rem;height:11rem;border-radius:50%;background:rgba(255,255,255,.06);}
+  .p-ctalabel{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.55);position:relative;}
+  .p-ctah{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-style:italic;color:white;line-height:1.3;position:relative;}
+  .p-ctasub{font-size:.78rem;color:rgba(255,255,255,.55);line-height:1.6;max-width:260px;position:relative;}
+  .p-ctabtn{background:white;color:#6B4E7D;padding:.55rem 1.5rem;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;border-radius:2px;position:relative;}
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <p class="ph-label">Ejemplos visuales · @Herass_Tarot</p>
+  <h1 class="ph-h1">Carruseles con <em>sistema de colores</em></h1>
+  <p class="ph-sub">4 ejemplos completos — uno por tipo · Navega con las flechas ← →</p>
+</div>
+
+<div class="legend">
+  <div class="li"><div class="ld" style="background:#4A7C5F;"></div>📚 Educativo Tarot (verde)</div>
+  <div class="li"><div class="ld" style="background:#3D6478;"></div>🔭 Educativo Astrología (azul)</div>
+  <div class="li"><div class="ld" style="background:#C4622D;"></div>🤝 Reflexión & Conexión (terracota)</div>
+  <div class="li"><div class="ld" style="background:#6B4E7D;"></div>✨ Servicio / Venta suave (morado)</div>
+</div>
+
+<div class="cs">
+
+  <!-- ══ C1 VERDE ══ -->
+  <div class="cb">
+    <div class="type-bar" style="background:linear-gradient(90deg,#4A7C5F,#7EC4A0);"></div>
+    <div class="cm">
+      <div class="cn">01</div>
+      <div>
+        <span class="ctag" style="background:rgba(74,124,95,.2);color:#7EC4A0;">📚 Educativo · Tarot</span>
+        <div class="ctitle">Los 4 palos del Tarot y qué revelan de tu vida</div>
+        <div class="chint">6 diapositivas · Lunes o miércoles · Verde oscuro #0C1E14</div>
+      </div>
+    </div>
+    <div class="stw"><div class="st" id="t1">
+
+      <div class="sl g-cover">
+        <div class="g-glow"></div>
+        <div class="g-star"><svg width="44" height="44" viewBox="0 0 80 80" fill="none"><line x1="40" y1="0" x2="40" y2="80" stroke="#7EC4A0" stroke-width=".8" opacity=".45"/><line x1="0" y1="40" x2="80" y2="40" stroke="#7EC4A0" stroke-width=".8" opacity=".45"/><line x1="11.7" y1="11.7" x2="68.3" y2="68.3" stroke="#7EC4A0" stroke-width=".8" opacity=".45"/><line x1="68.3" y1="11.7" x2="11.7" y2="68.3" stroke="#7EC4A0" stroke-width=".8" opacity=".45"/></svg></div>
+        <div style="position:relative;"><p class="g-eyebrow">Tarot Terapéutico · Guía básica</p><h2 class="g-h">Los <em>4 palos del Tarot</em> y qué revelan</h2></div>
+        <div class="handle">@Herass_Tarot</div>
+      </div>
+
+      <div class="sl g-list">
+        <div class="g-item"><div class="g-ico">🟡</div><div><div class="g-iname">Oros · Tierra</div><div class="g-idesc">Dinero, trabajo, estabilidad material</div></div></div>
+        <div class="g-item"><div class="g-ico" style="background:#3D5A4A;">♠️</div><div><div class="g-iname">Espadas · Aire</div><div class="g-idesc">Mente, conflictos, decisiones</div></div></div>
+        <div class="g-item"><div class="g-ico" style="background:#3D6478;">💧</div><div><div class="g-iname">Copas · Agua</div><div class="g-idesc">Emociones, relaciones, intuición</div></div></div>
+        <div class="g-item"><div class="g-ico" style="background:#7C5A3F;">🌿</div><div><div class="g-iname">Bastos · Fuego</div><div class="g-idesc">Energía, creatividad, acción</div></div></div>
+        <div style="position:absolute;bottom:.8rem;right:1rem;font-size:.55rem;color:#4A7C5F;letter-spacing:.06em;">@Herass_Tarot</div>
+      </div>
+
+      <div class="sl g-detail">
+        <div class="g-dbg">🟡</div>
+        <div class="g-dlabel">Palo de Oros · Elemento Tierra</div>
+        <div class="g-dname">Oros</div>
+        <div class="g-dsub">Dinero · Trabajo · Cuerpo · Hogar</div>
+        <div class="g-ddesc">Sus cartas hablan de esfuerzo, construir y valorar lo tangible. Si domina en tu tirada: algo en tu vida práctica necesita atención o reconocimiento.</div>
+        <div class="g-dq">"¿Estás cuidando lo que construyes?"</div>
+        <div class="handle">@Herass_Tarot</div>
+      </div>
+
+      <div class="sl" style="background:#EFF7F2;display:flex;flex-direction:column;justify-content:center;padding:2rem;position:relative;overflow:hidden;">
+        <div style="position:absolute;bottom:-1rem;right:-.5rem;font-family:'Cormorant Garamond',serif;font-size:5rem;font-weight:600;color:rgba(61,100,120,.07);line-height:1;">💧</div>
+        <div style="font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:#3D6478;margin-bottom:.8rem;">Palo de Copas · Elemento Agua</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;color:#0C1E14;margin-bottom:.5rem;">Copas</div>
+        <div style="font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#3D6478;margin-bottom:.8rem;">Emociones · Relaciones · Amor · Intuición</div>
+        <div style="font-size:.8rem;color:#5C3D2A;line-height:1.8;">Sus cartas hablan de lo que sientes y deseas en el corazón. Si dominan: algo emocional pide ser visto y sentido.</div>
+        <div style="margin-top:.8rem;padding:.7rem 1rem;border-left:2px solid #3D6478;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.92rem;color:#8B6150;">"¿Qué está sintiendo tu corazón que aún no has dicho?"</div>
+        <div style="position:absolute;bottom:.8rem;right:1rem;font-size:.55rem;color:#4A7C5F;letter-spacing:.06em;">@Herass_Tarot</div>
+      </div>
+
+      <div class="sl g-tip">
+        <div class="g-tlabel">Pro tip ✨</div>
+        <div class="g-th">Cuando hagas una tirada,<br><em>observa cuál palo domina</em></div>
+        <div class="g-tdesc">El palo con más cartas te dice en qué área de vida está ocurriendo lo más importante ahora. No es casualidad — es lo que tu alma quiere mostrarte.</div>
+        <div class="handle">@Herass_Tarot</div>
+      </div>
+
+      <div class="sl g-cta">
+        <svg width="34" height="34" viewBox="0 0 80 80" fill="none" style="position:relative;"><line x1="40" y1="0" x2="40" y2="80" stroke="white" stroke-width="1" opacity=".32"/><line x1="0" y1="40" x2="80" y2="40" stroke="white" stroke-width="1" opacity=".32"/><line x1="11.7" y1="11.7" x2="68.3" y2="68.3" stroke="white" stroke-width="1" opacity=".32"/><line x1="68.3" y1="11.7" x2="11.7" y2="68.3" stroke="white" stroke-width="1" opacity=".32"/></svg>
+        <p class="g-ctaq">"¿Qué palo aparece más en tus tiradas?"</p>
+        <p class="g-ctasub">Cuéntame en comentarios 👇</p>
+        <div class="g-ctabtn">¿Lista para una lectura? Link en bio</div>
+        <div style="font-size:.55rem;color:rgba(255,255,255,.22);position:relative;">@Herass_Tarot · herandenysana.com</div>
+      </div>
+
+    </div></div>
+    <div class="snav">
+      <button class="nb" id="p1" onclick="mv('t1','d1','s1',6,-1)" disabled>←</button>
+      <button class="nb" id="n1" onclick="mv('t1','d1','s1',6,1)">→</button>
+      <div class="dots" id="d1">
+        <div class="dot active" style="background:#4A7C5F;"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      </div>
+      <span class="sc" id="s1">1 / 6</span>
+    </div>
+    <div class="tip" style="background:rgba(74,124,95,.08);border-left:3px solid #4A7C5F;">💡 <strong style="color:#7EC4A0;">Canva:</strong> Fondo #0C1E14. Páginas internas alternando #EFF7F2 y #0C1E14. Cierre en #4A7C5F sólido. Fuente: Cormorant Garamond.</div>
+  </div>
+
+  <hr class="div">
+
+  <!-- ══ C2 AZUL ══ -->
+  <div class="cb">
+    <div class="type-bar" style="background:linear-gradient(90deg,#3D6478,#7BAFC4);"></div>
+    <div class="cm">
+      <div class="cn">02</div>
+      <div>
+        <span class="ctag" style="background:rgba(61,100,120,.2);color:#7BAFC4;">🔭 Educativo · Astrología</span>
+        <div class="ctitle">Tu carta natal: mucho más que tu signo solar</div>
+        <div class="chint">5 diapositivas · Miércoles · Azul marino oscuro #09131C</div>
+      </div>
+    </div>
+    <div class="stw"><div class="st" id="t2">
+
+      <div class="sl b-cover">
+        <div class="b-glow"></div>
+        <p class="b-tag">Astrología Terapéutica · Guía esencial</p>
+        <h2 class="b-h">Tu carta natal:<br><strong>el mapa de tu alma</strong></h2>
+        <p class="b-sub">Más allá del signo solar hay un universo entero esperándote.</p>
+        <div class="handle">@Herass_Tarot</div>
+      </div>
+
+      <div class="sl b-sl" style="background:#09131C;">
+        <div class="b-bnum">☀️</div>
+        <div class="b-dot" style="background:rgba(245,200,66,.15);">☀️</div>
+        <div class="b-name">Signo Solar</div>
+        <div class="b-sub2" style="color:#F5C842;">Tu identidad consciente</div>
+        <div class="b-desc">El que conoces por tu fecha de cumpleaños. Representa tu ego, tu energía vital y cómo te expresas al mundo. Es solo una pieza de tu carta natal.</div>
+        <div class="b-key">"¿Lees tu horóscopo y no te identificas? Es porque hay mucho más."</div>
+        <div class="handle">@Herass_Tarot</div>
+      </div>
+
+      <div class="sl b-sl" style="background:#060E17;">
+        <div class="b-bnum">🌙</div>
+        <div class="b-dot" style="background:rgba(200,220,255,.1);">🌙</div>
+        <div class="b-name">Signo Lunar</div>
+        <div class="b-sub2" style="color:#A8C4E8;">Tu mundo emocional</div>
+        <div class="b-desc">Cómo sientes, qué te nutre, qué necesitas emocionalmente. El signo lunar es quien eres cuando nadie te ve — tu yo más íntimo y auténtico.</div>
+        <div class="b-key">"Muchas personas se identifican más con su Luna que con su Sol."</div>
+        <div class="handle">@Herass_Tarot</div>
+      </div>
+
+      <div class="sl b-sl" style="background:#09131C;">
+        <div class="b-bnum">⬆️</div>
+        <div class="b-dot" style="background:rgba(123,175,196,.14);">⬆️</div>
+        <div class="b-name">Ascendente</div>
+        <div class="b-sub2" style="color:#7BAFC4;">La máscara que el mundo ve</div>
+        <div class="b-desc">Cómo te perciben los demás y cómo tú te presentas. Define tu apariencia y tu primer impacto. Se calcula con la hora exacta de nacimiento.</div>
+        <div class="b-key">"¿Te dicen que eres muy diferente a tu signo? Tu ascendente lo explica."</div>
+        <div class="handle">@Herass_Tarot</div>
+      </div>
+
+      <div class="sl b-cta">
+        <svg width="34" height="34" viewBox="0 0 80 80" fill="none" style="position:relative;"><line x1="40" y1="0" x2="40" y2="80" stroke="white" stroke-width="1" opacity=".32"/><line x1="0" y1="40" x2="80" y2="40" stroke="white" stroke-width="1" opacity=".32"/><line x1="11.7" y1="11.7" x2="68.3" y2="68.3" stroke="white" stroke-width="1" opacity=".32"/><line x1="68.3" y1="11.7" x2="11.7" y2="68.3" stroke="white" stroke-width="1" opacity=".32"/></svg>
+        <p class="b-ctaq">"¿Conoces tu signo lunar y tu ascendente?"</p>
+        <p class="b-ctasub">En una sesión de astrología terapéutica leemos tu carta natal completa.</p>
+        <div class="b-ctabtn">Agenda tu sesión · Link en bio</div>
+        <div style="font-size:.55rem;color:rgba(255,255,255,.2);position:relative;">@Herass_Tarot · herandenysana.com</div>
+      </div>
+
+    </div></div>
+    <div class="snav">
+      <button class="nb" id="p2" onclick="mv('t2','d2','s2',5,-1)" disabled>←</button>
+      <button class="nb" id="n2" onclick="mv('t2','d2','s2',5,1)">→</button>
+      <div class="dots" id="d2">
+        <div class="dot active" style="background:#3D6478;"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      </div>
+      <span class="sc" id="s2">1 / 5</span>
+    </div>
+    <div class="tip" style="background:rgba(61,100,120,.08);border-left:3px solid #3D6478;">💡 <strong style="color:#7BAFC4;">Canva:</strong> Fondo #09131C. Páginas internas variando entre #060E17 y #09131C. Icono del astro como elemento visual grande. Cierre en #3D6478 sólido.</div>
+  </div>
+
+  <hr class="div">
+
+  <!-- ══ C3 TERRACOTA ══ -->
+  <div class="cb">
+    <div class="type-bar" style="background:linear-gradient(90deg,#C4622D,#E8856A);"></div>
+    <div class="cm">
+      <div class="cn">03</div>
+      <div>
+        <span class="ctag" style="background:rgba(196,98,45,.2);color:#E8856A;">🤝 Reflexión · Conexión</span>
+        <div class="ctitle">3 señales de que tu alma pide atención</div>
+        <div class="chint">5 diapositivas · Viernes · Terracota + crema + marrón oscuro</div>
+      </div>
+    </div>
+    <div class="stw"><div class="st" id="t3">
+
+      <div class="sl t-cover">
+        <div class="t-wm">3</div>
+        <div class="t-hand">@Herass_Tarot</div>
+        <div style="position:relative;"><div class="t-num">3</div><h2 class="t-h">señales de que<br><em>tu alma pide<br>atención</em></h2></div>
+        <div class="t-swipe">desliza para descubrir →</div>
+      </div>
+
+      <div class="sl t-cream">
+        <div class="t-cbg">1</div>
+        <div class="t-clabel">Señal #1</div>
+        <div class="t-ch">Sientes que algo no encaja</div>
+        <div class="t-cdesc">Tienes trabajo, relaciones, salud... pero algo por dentro no termina de estar bien. No sabes nombrarlo. Solo sabes que no es lo que querías.</div>
+        <div class="t-cq">"Estoy bien en el papel, pero por dentro algo falta."</div>
+        <div style="position:absolute;bottom:.8rem;right:1rem;font-size:.55rem;color:#C4622D;letter-spacing:.06em;">@Herass_Tarot</div>
+      </div>
+
+      <div class="sl t-dark">
+        <div class="t-dbg">2</div>
+        <div class="t-dlabel">Señal #2</div>
+        <div class="t-dh">Repites siempre los mismos patrones</div>
+        <div class="t-ddesc">Las mismas peleas, las mismas relaciones que no funcionan, los mismos bloqueos. Cambias de circunstancias pero el resultado es siempre el mismo.</div>
+        <div class="t-dq">"¿Por qué me pasa siempre lo mismo?"</div>
+        <div style="position:absolute;bottom:.8rem;right:1rem;font-size:.55rem;color:rgba(232,133,106,.45);">@Herass_Tarot</div>
+      </div>
+
+      <div class="sl t-cream">
+        <div class="t-cbg">3</div>
+        <div class="t-clabel">Señal #3</div>
+        <div class="t-ch">Decides desde el miedo, no desde el amor</div>
+        <div class="t-cdesc">Dices sí cuando quieres decir no. Te quedas donde no te hace bien porque tienes miedo de lo desconocido. No desde lo que quieres — desde lo que temes perder.</div>
+        <div class="t-cq">"Sé lo que debería hacer, pero no puedo."</div>
+        <div style="position:absolute;bottom:.8rem;right:1rem;font-size:.55rem;color:#C4622D;letter-spacing:.06em;">@Herass_Tarot</div>
+      </div>
+
+      <div class="sl t-cta">
+        <div class="t-ctalabel">¿Te has reconocido?</div>
+        <div class="t-ctah">"Te acompaño a sanar lo que la vida dejó pendiente."</div>
+        <div class="t-ctasub">En una sola sesión personalizada podemos identificar de dónde viene lo que sientes y cómo empezar a soltarlo.</div>
+        <div class="t-ctabtn">Agenda tu sesión →</div>
+        <div style="font-size:.55rem;color:rgba(255,255,255,.18);position:relative;">herandenysana.com · @Herass_Tarot</div>
+      </div>
+
+    </div></div>
+    <div class="snav">
+      <button class="nb" id="p3" onclick="mv('t3','d3','s3',5,-1)" disabled>←</button>
+      <button class="nb" id="n3" onclick="mv('t3','d3','s3',5,1)">→</button>
+      <div class="dots" id="d3">
+        <div class="dot active" style="background:#C4622D;"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      </div>
+      <span class="sc" id="s3">1 / 5</span>
+    </div>
+    <div class="tip" style="background:rgba(196,98,45,.08);border-left:3px solid #C4622D;">💡 <strong style="color:#E8856A;">Canva:</strong> Portada terracota #C4622D. Señales alternando #FAF6F0 (crema) y #2D1F14 (marrón oscuro). Número grande semitransparente como elemento visual. Cierre en marrón oscuro con tagline.</div>
+  </div>
+
+  <hr class="div">
+
+  <!-- ══ C4 MORADO ══ -->
+  <div class="cb">
+    <div class="type-bar" style="background:linear-gradient(90deg,#6B4E7D,#B08FCC);"></div>
+    <div class="cm">
+      <div class="cn">04</div>
+      <div>
+        <span class="ctag" style="background:rgba(107,78,125,.2);color:#B08FCC;">✨ Servicio · Venta suave</span>
+        <div class="ctitle">¿Para qué sirve una sesión conmigo?</div>
+        <div class="chint">5 diapositivas · Domingo o martes · Morado oscuro #160D20 + lavanda</div>
+      </div>
+    </div>
+    <div class="stw"><div class="st" id="t4">
+
+      <div class="sl p-cover">
+        <div class="p-glow"></div>
+        <p class="p-tag">Sesión Personalizada · Herandeny Sánchez</p>
+        <h2 class="p-h">¿Para qué sirve<br><em>una sesión conmigo?</em></h2>
+        <p class="p-sub">No vengo a decirte lo que va a pasar. Vengo a ayudarte a ver lo que ya sabes.</p>
+        <div class="handle">@Herass_Tarot</div>
+      </div>
+
+      <div class="sl p-lav">
+        <div class="p-lbg">1</div>
+        <div class="p-llabel">Beneficio 1</div>
+        <div class="p-lh">Para tomar decisiones con claridad</div>
+        <div class="p-ldesc">Cuando no sabes qué camino tomar o cuando la mente no para — una sesión te da perspectiva y te ayuda a escuchar lo que ya sabes.</div>
+        <div class="p-lq">"Salí sabiendo exactamente qué hacer." — Ana, CDMX</div>
+        <div style="position:absolute;bottom:.8rem;right:1rem;font-size:.55rem;color:#6B4E7D;letter-spacing:.06em;">@Herass_Tarot</div>
+      </div>
+
+      <div class="sl p-dark">
+        <div class="p-dlabel">Beneficio 2</div>
+        <div class="p-dh">Para entender por qué se repiten los patrones</div>
+        <div class="p-ddesc">Las mismas relaciones, los mismos conflictos, el mismo estancamiento. Los patrones tienen una raíz. En sesión la encontramos juntas.</div>
+        <div class="p-dq">"Por fin entendí por qué me pasaba siempre lo mismo." — Laura, Argentina</div>
+        <div style="position:absolute;bottom:.8rem;right:1rem;font-size:.55rem;color:rgba(176,143,204,.35);">@Herass_Tarot</div>
+      </div>
+
+      <div class="sl p-lav">
+        <div class="p-lbg">3</div>
+        <div class="p-llabel">Cómo funciona</div>
+        <div class="p-lh">Cada sesión es única para ti</div>
+        <div class="p-ldesc">No hay un menú fijo. Escucho tu situación y elijo las herramientas que mejor se adaptan: tarot, astrología, numerología, oráculo... lo que tú necesitas hoy.</div>
+        <div class="p-lq">"No fue una lectura genérica — habló exactamente de lo que yo vivía." — Sofía, Guadalajara</div>
+        <div style="position:absolute;bottom:.8rem;right:1rem;font-size:.55rem;color:#6B4E7D;letter-spacing:.06em;">@Herass_Tarot</div>
+      </div>
+
+      <div class="sl p-cta">
+        <div class="p-ctalabel">¿Lista para empezar?</div>
+        <p class="p-ctah">"Encuentra claridad cuando todo parece perdido."</p>
+        <p class="p-ctasub">Primera sesión sin compromiso. Presencial en CDMX o en línea para todo el mundo.</p>
+        <div class="p-ctabtn">Agenda ahora · Link en bio</div>
+        <div style="font-size:.55rem;color:rgba(255,255,255,.18);position:relative;">herandenysana.com · @Herass_Tarot</div>
+      </div>
+
+    </div></div>
+    <div class="snav">
+      <button class="nb" id="p4" onclick="mv('t4','d4','s4',5,-1)" disabled>←</button>
+      <button class="nb" id="n4" onclick="mv('t4','d4','s4',5,1)">→</button>
+      <div class="dots" id="d4">
+        <div class="dot active" style="background:#6B4E7D;"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      </div>
+      <span class="sc" id="s4">1 / 5</span>
+    </div>
+    <div class="tip" style="background:rgba(107,78,125,.08);border-left:3px solid #6B4E7D;">💡 <strong style="color:#B08FCC;">Canva:</strong> Fondo #160D20 (morado muy oscuro). Páginas internas alternando #F4F0F8 (lavanda claro) y #160D20. Testimonios reales en las quotes — son el elemento más poderoso. Cierre en #6B4E7D sólido.</div>
+  </div>
+
+</div>
+
+<script>
+  const pos={t1:0,t2:0,t3:0,t4:0};
+  const cols={t1:'#4A7C5F',t2:'#3D6478',t3:'#C4622D',t4:'#6B4E7D'};
+  const SW=380;
+
+  function mv(tid,did,sid,total,dir){
+    const np=Math.max(0,Math.min(total-1,pos[tid]+dir));
+    setSlide(tid,did,sid,np,total);
+  }
+
+  function setSlide(tid,did,sid,p,total){
+    pos[tid]=p;
+    document.getElementById(tid).style.transform=`translateX(-${p*SW}px)`;
+    const dots=document.getElementById(did).querySelectorAll('.dot');
+    dots.forEach((d,i)=>{
+      d.classList.toggle('active',i===p);
+      d.style.background=i===p?cols[tid]:'rgba(255,255,255,0.15)';
+      d.style.width=i===p?'20px':'6px';
+    });
+    document.getElementById(sid).textContent=`${p+1} / ${total}`;
+    const n=tid.replace('t','');
+    const pv=document.getElementById('p'+n);
+    const nx=document.getElementById('n'+n);
+    if(pv)pv.disabled=p===0;
+    if(nx)nx.disabled=p===total-1;
+  }
+</script>
+</body>
+</html>
