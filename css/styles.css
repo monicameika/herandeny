@@ -73,7 +73,6 @@ nav.scrolled {
 
 /* ── HERO ── */
 .hero {
-  min-height: 100vh;
   background: var(--terracota);
   display: flex;
   flex-direction: column;
