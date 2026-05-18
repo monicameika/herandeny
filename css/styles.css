@@ -15,8 +15,9 @@
   --brown-light: #8B6150;
   --gold: #C9A96E;
   --gold-light: #E8D5B0;
-  --morado: #6B4E7D;
-  --morado-dark: #4A3459;
+  --morado: #16102A;
+  --morado-dark: #0E0A1C;
+  --morado-mid: #2A1F45;
   --morado-light: #D4B8E8;
 }
 
@@ -469,6 +470,17 @@ nav.scrolled {
 .curso {
   padding: 8rem 6rem;
   background: var(--morado);
+  position: relative;
+  overflow: hidden;
+}
+.curso::before {
+  content: '';
+  position: absolute;
+  top: -8rem; right: -8rem;
+  width: 36rem; height: 36rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(107,78,125,0.45) 0%, transparent 70%);
+  pointer-events: none;
 }
 .curso-inner {
   display: grid;
@@ -525,7 +537,7 @@ nav.scrolled {
   flex-shrink: 0;
 }
 .curso-pricing {
-  background: var(--morado-dark);
+  background: var(--morado-mid);
   padding: 2.5rem;
   border-radius: 2px;
 }
@@ -597,8 +609,9 @@ nav.scrolled {
 .curso-details li strong { color: rgba(255,255,255,0.85); }
 .btn-curso {
   display: block;
-  background: var(--morado-light);
-  color: var(--morado-dark);
+  background: rgba(212,184,232,0.1);
+  color: var(--morado-light);
+  border: 1px solid rgba(212,184,232,0.35);
   text-align: center;
   padding: 1rem;
   font-size: 0.8rem;
@@ -607,9 +620,9 @@ nav.scrolled {
   font-weight: 500;
   text-decoration: none;
   border-radius: 2px;
-  transition: background 0.3s, color 0.3s;
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
 }
-.btn-curso:hover { background: white; color: var(--morado-dark); }
+.btn-curso:hover { background: rgba(212,184,232,0.2); border-color: var(--morado-light); color: white; }
 .curso-spots {
   text-align: center;
   font-size: 0.72rem;
