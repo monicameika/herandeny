@@ -823,13 +823,13 @@ footer {
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
+  html, body { overflow-x: hidden; max-width: 100%; }
   nav { padding: 1rem 2rem; }
   .nav-links { display: none; }
   .hero { padding: 8rem 2rem 5rem; }
-  .hero-title { font-size: 2.8rem; }
-  .hero-taglines-row { flex-direction: column; gap: 1rem; }
-  .hero-tagline-pill { border-right: none; padding: 0; }
-  .hero-stats { gap: 2rem; }
+  .hero-watermark { font-size: 8rem; }
+  .hero-title { font-size: 2.4rem; }
+  .hero-taglines-row { display: none; }
   .about { grid-template-columns: 1fr; padding: 5rem 2rem; gap: 3rem; }
   .about-image-side { display: none; }
   .services { padding: 5rem 2rem; }
@@ -845,5 +845,8 @@ footer {
   .contact { grid-template-columns: 1fr; }
   .contact-left { padding: 5rem 2rem 3rem; border-right: none; border-bottom: 1px solid var(--gold-light); }
   .contact-right { padding: 3rem 2rem 5rem; }
+  .btn-whatsapp { align-self: stretch; justify-content: center; }
   footer { padding: 2rem; flex-direction: column; text-align: center; }
+  .footer-links { flex-wrap: wrap; justify-content: center; gap: 1rem 1.5rem; }
+  .footer-copy { word-break: break-all; }
 }
