@@ -15,6 +15,9 @@
   --brown-light: #8B6150;
   --gold: #C9A96E;
   --gold-light: #E8D5B0;
+  --morado: #6B4E7D;
+  --morado-dark: #4A3459;
+  --morado-light: #D4B8E8;
 }
 
 /* ── RESET ── */
@@ -465,7 +468,7 @@ nav.scrolled {
 /* ── CURSO PÉNDULO ── */
 .curso {
   padding: 8rem 6rem;
-  background: var(--warm-white);
+  background: var(--morado);
 }
 .curso-inner {
   display: grid;
@@ -475,8 +478,8 @@ nav.scrolled {
 }
 .curso-badge {
   display: inline-block;
-  background: rgba(196,98,45,0.1);
-  color: var(--terracota);
+  background: rgba(255,255,255,0.12);
+  color: var(--morado-light);
   font-size: 0.68rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -489,14 +492,14 @@ nav.scrolled {
   font-size: clamp(2rem, 3vw, 2.8rem);
   font-weight: 400;
   line-height: 1.2;
-  color: var(--brown-dark);
+  color: white;
   margin-bottom: 1.5rem;
 }
-.curso-title em { font-style: italic; color: var(--terracota); }
+.curso-title em { font-style: italic; color: var(--morado-light); }
 .curso-desc {
   font-size: 1rem;
   line-height: 1.9;
-  color: var(--brown-mid);
+  color: rgba(255,255,255,0.75);
   margin-bottom: 2rem;
 }
 .curso-includes {
@@ -508,21 +511,21 @@ nav.scrolled {
   align-items: flex-start;
   gap: 0.8rem;
   font-size: 0.9rem;
-  color: var(--brown-mid);
+  color: rgba(255,255,255,0.75);
   padding: 0.5rem 0;
-  border-bottom: 1px solid var(--gold-light);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
   line-height: 1.5;
 }
 .curso-includes li:last-child { border-bottom: none; }
 .curso-includes li::before {
   content: '✦';
-  color: var(--terracota);
+  color: var(--morado-light);
   font-size: 0.7rem;
   margin-top: 0.2rem;
   flex-shrink: 0;
 }
 .curso-pricing {
-  background: var(--brown-dark);
+  background: var(--morado-dark);
   padding: 2.5rem;
   border-radius: 2px;
 }
@@ -554,8 +557,8 @@ nav.scrolled {
   margin-bottom: 1.5rem;
 }
 .curso-discount-box {
-  background: rgba(196,98,45,0.15);
-  border: 1px solid rgba(196,98,45,0.3);
+  background: rgba(212,184,232,0.12);
+  border: 1px solid rgba(212,184,232,0.25);
   padding: 1rem 1.2rem;
   border-radius: 2px;
   margin-bottom: 1.5rem;
@@ -564,7 +567,7 @@ nav.scrolled {
   font-size: 0.62rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--terracota-light);
+  color: var(--morado-light);
   margin-bottom: 0.3rem;
 }
 .curso-discount-text {
@@ -576,7 +579,7 @@ nav.scrolled {
 .curso-discount-price {
   font-size: 1.4rem;
   font-weight: 500;
-  color: var(--terracota-light);
+  color: var(--morado-light);
 }
 .curso-details {
   list-style: none;
@@ -594,8 +597,8 @@ nav.scrolled {
 .curso-details li strong { color: rgba(255,255,255,0.85); }
 .btn-curso {
   display: block;
-  background: var(--terracota);
-  color: white;
+  background: var(--morado-light);
+  color: var(--morado-dark);
   text-align: center;
   padding: 1rem;
   font-size: 0.8rem;
@@ -604,9 +607,9 @@ nav.scrolled {
   font-weight: 500;
   text-decoration: none;
   border-radius: 2px;
-  transition: background 0.3s;
+  transition: background 0.3s, color 0.3s;
 }
-.btn-curso:hover { background: var(--terracota-dark); }
+.btn-curso:hover { background: white; color: var(--morado-dark); }
 .curso-spots {
   text-align: center;
   font-size: 0.72rem;
